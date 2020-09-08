@@ -24,7 +24,7 @@ public class FieldOrder <T extends Formula> {
     private List<String> sortFieldsByFormulaDependency(Collection<T> fields, Class clazz) {
         Graph<String, DefaultEdge> fieldRelationshipGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
 
-        ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(field.getName()));
+        ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(ReflectionUtility.getFieldName(field)));
 
         fields.forEach(field -> addGraphEdges(fieldRelationshipGraph, field));
 

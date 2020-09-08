@@ -14,7 +14,7 @@ public abstract class Formula<T> {
     protected Set<String> variables;
 
     protected Set<String> extractVariables(String expression, Class clazz) {
-        return ReflectionUtility.getClassFields(clazz).stream().filter(f -> expression.contains(f.getName())).map(Field::getName).collect(Collectors.toSet());
+        return ReflectionUtility.getClassFieldNames(clazz).stream().filter(expression::contains).collect(Collectors.toSet());
     }
 
     protected abstract T generateFunction(Set<String> variables, Field field);

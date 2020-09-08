@@ -1,7 +1,6 @@
 package com.ismail.mathreflection.factory;
 
 import com.ismail.mathreflection.annotations.MXFormula;
-import com.ismail.mathreflection.core.Calculator;
 import com.ismail.mathreflection.core.impl.MXCalculator;
 import com.ismail.mathreflection.exceptions.NoFormulaFoundForTypeException;
 import com.ismail.mathreflection.models.FieldOrder;
@@ -13,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class MXFactory {
 
-    public static Calculator createCalculator(Class clazz) {
+    public static MXCalculator createCalculator(Class clazz) {
 
         Map<String, MXFunction> annotatedFields = getAnnotatedMXFormulaFieldsAndValuesMap(clazz);
 
@@ -24,7 +23,7 @@ public class MXFactory {
 
         FieldOrder fieldOrder=new FieldOrder(annotatedFields, clazz);
 
-        Calculator calculator=new MXCalculator();
+        MXCalculator calculator=new MXCalculator();
         return calculator;
     }
 

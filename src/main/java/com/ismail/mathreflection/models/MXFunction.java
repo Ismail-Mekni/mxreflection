@@ -2,6 +2,7 @@ package com.ismail.mathreflection.models;
 
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.exceptions.FormulaIsNotValidException;
+import com.ismail.mathreflection.utilities.ReflectionUtility;
 import org.mariuszgromada.math.mxparser.Function;
 
 import java.lang.reflect.Field;
@@ -21,7 +22,7 @@ public class MXFunction extends Formula<Function> {
     }
 
     public MXFunction(Field field, Class clazz) {
-        this.fieldName = field.getName();
+        this.fieldName = ReflectionUtility.getFieldName(field);
 
         String expression = field.getAnnotation(MXFormula.class).value();
         this.variables = extractVariables(expression, clazz);

@@ -11,6 +11,7 @@ public class BeanTest {
     @Variable("f2")
     public int field2;
 
+    @MXFormula("f1 - f2")
     public int field3;
 
     @MXFormula("f1 + f2 + field3")

@@ -13,21 +13,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/core/impl/MXCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/core/impl/MXCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/factory/MXFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/factory/MXFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/models/FieldOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/models/FieldOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/factory/MathReflectionFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/factory/MathReflectionFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.ismail.mathreflection.factory.MathReflectionFactoryTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/utilities/GraphUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/utilities/GraphUtility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/utilities/BeanTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/utilities/BeanTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ismail.mathreflection.factory.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ismail.mathreflection.factory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.ismail.mathreflection.factory.MathReflectionFactoryTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/factory/MXFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/factory/MXFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/FieldOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/FieldOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/GraphUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/GraphUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MXCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MXCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +92,7 @@
       <recent name="D:\My projects\new\mathreflection\src\main\java\com\ismail\mathreflection\annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MXCalculatorTest">
+  <component name="RunManager" selected="Gradle.MathReflectionFactoryTest">
     <configuration name="MXCalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -118,12 +113,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MathReflectionFactoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MXCalculatorTest.calculateFormulaTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.factory.MathReflectionFactoryTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.factory.MXCalculatorTest.calculateFormulaTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -138,12 +133,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MathReflectionFactoryTest.throwFormulaIsNotValidExceptionForFieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MathReflectionFactoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.factory.MathReflectionFactoryTest.throwFormulaIsNotValidExceptionForFieldTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.factory.MathReflectionFactoryTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -200,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MXCalculatorTest" />
         <item itemvalue="Gradle.MathReflectionFactoryTest" />
+        <item itemvalue="Gradle.MXCalculatorTest" />
+        <item itemvalue="Gradle.MXCalculatorTest.calculateFormulaTest" />
         <item itemvalue="Gradle.MathUtilsTest.itShouldAddNumberFromHelper" />
         <item itemvalue="Gradle.MathUtilsTest" />
-        <item itemvalue="Gradle.MathReflectionFactoryTest.throwFormulaIsNotValidExceptionForFieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -239,41 +234,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="231" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473247872" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599599203336">
+    <state width="444" height="466" key="DebuggerActiveHint" timestamp="1599689072049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599599203336" />
+    <state width="444" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1599689072049" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599689207686">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599689207686" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473605358" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1599599203336">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1599689207686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599599203335" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599689207686" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473605357" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1599599203335">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1599689207686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599599203335" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599689207686" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473605357" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1599599203336">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1599689207686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599599203336" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599689207686" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473605358" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1599473288528">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1599689176827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599689176827" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473288528" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1599473288527">
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1599689176827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599689176827" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473288527" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1599473288527">
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1599689176827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599689176827" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473288527" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1599473288528">
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1599689176827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599689176827" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473288528" />
     <state x="490" y="179" key="Maven.ArtifactSearchDialog" timestamp="1599168630795">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -283,5 +286,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599595362640" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/FieldOrder.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

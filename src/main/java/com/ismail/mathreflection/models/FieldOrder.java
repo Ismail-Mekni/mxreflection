@@ -21,22 +21,32 @@ public class FieldOrder <T extends Formula> {
         sortFieldsByFormulaDependency(fieldMap.values(), clazz);
     }
 
-    private List<String> sortFieldsByFormulaDependency(Collection<T> fields, Class clazz) {
+    private Queue<T> sortFieldsByFormulaDependency(Collection<T> fields, Class clazz) {
         Graph<String, DefaultEdge> fieldRelationshipGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
 
         ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(ReflectionUtility.getFieldName(field)));
 
         fields.forEach(field -> addGraphEdges(fieldRelationshipGraph, field));
 
-        List<String> orderedFielsByName = new ArrayList<>();
         if(GraphUtility.checkGraphCycle(fieldRelationshipGraph))
             throw new CycleFormulaDependencyException(clazz.getName());
 
-        return orderedFielsByName;
+        return sortFields(fieldRelationshipGraph);
+    }
+
+    private Queue<T> sortFields(Graph<String, DefaultEdge> fielGraph) {
+        //TODO
     }
 
     private void addGraphEdges(Graph<String, DefaultEdge> graph, T field) {
         field.getVariables().forEach(f -> graph.addEdge(field.fieldName, (String) f));
     }
 
+    public Queue<T> getOrderedFields() {
+        return orderedFields;
+    }
+
+    public void setOrderedFields(Queue<T> orderedFields) {
+        this.orderedFields = orderedFields;
+    }
 }

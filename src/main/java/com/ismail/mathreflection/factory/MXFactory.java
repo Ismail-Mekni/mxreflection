@@ -23,7 +23,7 @@ public class MXFactory {
 
         FieldOrder fieldOrder=new FieldOrder(annotatedFields, clazz);
 
-        MXCalculator calculator=new MXCalculator();
+        MXCalculator calculator=new MXCalculator(fieldOrder);
         return calculator;
     }
 

@@ -1,4 +1,5 @@
 package com.ismail.mathreflection.core;
 
-public interface Calculator {
+public interface Calculator<T> {
+    void calculate(T object);
 }

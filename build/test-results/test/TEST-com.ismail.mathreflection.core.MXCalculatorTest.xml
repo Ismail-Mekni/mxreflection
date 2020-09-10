@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ismail.mathreflection.core.MXCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-10T21:29:49" hostname="IMEKNI-PC" time="0.167">
+  <properties/>
+  <testcase name="calculateInitializerTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.167"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

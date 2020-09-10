@@ -2,11 +2,15 @@ package com.ismail.mathreflection.models;
 
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.exceptions.FormulaIsNotValidException;
+import com.ismail.mathreflection.exceptions.InvalidSetOfVariableException;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
+import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.Function;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class MXFunction extends Formula<Function> {
 
@@ -14,9 +18,9 @@ public class MXFunction extends Formula<Function> {
 
     private static final String FUNCTION_SIGNATURE_POSTFIX = ") =";
 
-    private static final String FUNCTION_VARIABLES_DELIMITER = ", ";
+    private static final String EXPRESSION_ARGUMENTS_POSTFIX = ")";
 
-    private Function function;
+    private static final String FUNCTION_VARIABLES_DELIMITER = ", ";
 
     public MXFunction() {
     }
@@ -27,14 +31,7 @@ public class MXFunction extends Formula<Function> {
         String expression = field.getAnnotation(MXFormula.class).value();
         this.variables = extractVariables(expression, clazz);
         this.function = generateFunction(variables, field);
-    }
-
-    public Function getFunction() {
-        return function;
-    }
-
-    public void setFunction(Function function) {
-        this.function = function;
+        generatePredicate();
     }
 
     @Override
@@ -49,5 +46,18 @@ public class MXFunction extends Formula<Function> {
         }
 
         return function;
+    }
+
+    @Override
+    protected void generatePredicate() {
+        this.lambda = (Set<Double> variables) -> {
+            String argsExpression = FUNCTION_SIGNATURE_PREFIX
+                    + String.join(FUNCTION_VARIABLES_DELIMITER, variables.stream().map(var -> var.toString()).collect(Collectors.toSet())) + EXPRESSION_ARGUMENTS_POSTFIX;
+            Expression expression= new Expression(argsExpression, this.function);
+
+            // TODO return expression.calculate();
+        };
+
+
     }
 }

@@ -12,19 +12,16 @@ import java.util.stream.Collectors;
 
 public class MXFactory {
 
-    public static MXCalculator createCalculator(Class clazz) {
+    public static <T> MXCalculator<T> createCalculator(Class<T> clazz) {
 
         Map<String, MXFunction> annotatedFields = getAnnotatedMXFormulaFieldsAndValuesMap(clazz);
-
-
 
         if( !checkAnnotatedFields(annotatedFields))
             throw new NoFormulaFoundForTypeException(clazz.getName());
 
         FieldOrder fieldOrder=new FieldOrder(annotatedFields, clazz);
 
-        MXCalculator calculator=new MXCalculator(fieldOrder);
-        return calculator;
+        return new MXCalculator(fieldOrder);
     }
 
     private static boolean checkAnnotatedFields(Map annotatedFields) {

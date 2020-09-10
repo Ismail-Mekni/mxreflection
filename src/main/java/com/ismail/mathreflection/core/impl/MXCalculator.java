@@ -4,7 +4,10 @@ import com.ismail.mathreflection.core.Calculator;
 import com.ismail.mathreflection.models.FieldOrder;
 import com.ismail.mathreflection.models.MXFunction;
 
-public class MXCalculator implements Calculator {
+import java.util.Map;
+import java.util.function.Predicate;
+
+public class MXCalculator <T> implements Calculator <T> {
 
     private FieldOrder<MXFunction> fieldOrder;
 
@@ -17,5 +20,10 @@ public class MXCalculator implements Calculator {
 
     public FieldOrder<MXFunction> getFieldOrder() {
         return fieldOrder;
+    }
+
+    @Override
+    public void calculate(T object) {
+
     }
 }

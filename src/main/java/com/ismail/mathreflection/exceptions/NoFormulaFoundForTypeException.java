@@ -6,7 +6,7 @@ public class NoFormulaFoundForTypeException extends RuntimeException {
     }
 
     public NoFormulaFoundForTypeException(String message) {
-        super(String.format(ExceptionMessageEnum.NO_FORMULA_FOUND_FOR_TYPE.getMessage(), message));
+        super(ExceptionMessageEnum.INVALID_SET_VARIABLES.getMessage());
     }
 
 }

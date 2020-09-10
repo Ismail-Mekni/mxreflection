@@ -4,7 +4,6 @@ import com.ismail.mathreflection.exceptions.CycleFormulaDependencyException;
 import com.ismail.mathreflection.utilities.GraphUtility;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 import org.jgrapht.Graph;
-import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 

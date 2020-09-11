@@ -5,7 +5,6 @@ import com.ismail.mathreflection.utilities.ReflectionUtility;
 import java.lang.reflect.Field;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public abstract class Formula<T> {

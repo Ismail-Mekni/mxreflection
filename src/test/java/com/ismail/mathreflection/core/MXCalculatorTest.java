@@ -16,11 +16,13 @@ public class MXCalculatorTest {
 
     @Before
     public void setUp() {
-        calculator = MXFactory.createCalculator(BeanTest.class);
+
     }
 
     @Test
     public void calculateInitializerTest() {
+
+        calculator = MXFactory.createCalculator(BeanTest.class);
 
         assertNotNull(calculator.getFieldOrder());
 
@@ -32,6 +34,19 @@ public class MXCalculatorTest {
 
         assertEquals("field4", ((Formula) calculator.getFieldOrder().getOrderedFields().poll()).getFieldName());
 
+    }
+
+    @Test
+    public void calculateSimpleBeanWithPublicAndDoubleFieldsTest(){
+        calculator = MXFactory.createCalculator(BeanTest.class);
+
+        BeanTest beanTest = new BeanTest();
+
+        beanTest.field1 = 5;
+
+        beanTest.field2 = 6;
+
+        calculator.calculate(beanTest);
     }
 
 }

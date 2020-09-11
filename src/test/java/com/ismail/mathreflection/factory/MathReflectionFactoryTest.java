@@ -8,6 +8,9 @@ import com.ismail.mathreflection.exceptions.NoFormulaFoundForTypeException;
 import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertNotNull;
 
 public class MathReflectionFactoryTest {

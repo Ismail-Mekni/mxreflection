@@ -2,13 +2,11 @@ package com.ismail.mathreflection.models;
 
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.exceptions.FormulaIsNotValidException;
-import com.ismail.mathreflection.exceptions.InvalidSetOfVariableException;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.Function;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -51,13 +49,13 @@ public class MXFunction extends Formula<Function> {
     @Override
     protected void generatePredicate() {
         this.lambda = (Set<Double> variables) -> {
+
             String argsExpression = FUNCTION_SIGNATURE_PREFIX
-                    + String.join(FUNCTION_VARIABLES_DELIMITER, variables.stream().map(var -> var.toString()).collect(Collectors.toSet())) + EXPRESSION_ARGUMENTS_POSTFIX;
-            Expression expression= new Expression(argsExpression, this.function);
+                    + String.join(FUNCTION_VARIABLES_DELIMITER, variables.stream().map(var -> var.toString()).collect(Collectors.toSet()))
+                    + EXPRESSION_ARGUMENTS_POSTFIX;
+            Expression expression = new Expression(argsExpression, this.function);
 
-            // TODO return expression.calculate();
+            return expression.calculate();
         };
-
-
     }
 }

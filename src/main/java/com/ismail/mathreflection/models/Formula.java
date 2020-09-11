@@ -4,6 +4,7 @@ import com.ismail.mathreflection.utilities.ReflectionUtility;
 
 import java.lang.reflect.Field;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public abstract class Formula<T> {
 
     protected T function;
 
-    protected Predicate<Double> lambda;
+    protected Function<Set<Double>, Double> lambda;
 
     protected Set<String> extractVariables(String expression, Class clazz) {
         return ReflectionUtility.getClassFieldNames(clazz).stream().filter(expression::contains).collect(Collectors.toSet());
@@ -50,11 +51,11 @@ public abstract class Formula<T> {
         this.function = function;
     }
 
-    public Predicate getLambda() {
+    public Function<Set<Double>, Double> getLambda() {
         return lambda;
     }
 
-    public void setLambda(Predicate lambda) {
+    public void setLambda(Function lambda) {
         this.lambda = lambda;
     }
 }

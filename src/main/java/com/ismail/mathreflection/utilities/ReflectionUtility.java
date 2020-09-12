@@ -29,10 +29,22 @@ public class ReflectionUtility {
     }
 
     public static Double getFieldValue(String field, Object object) throws NoSuchFieldException, IllegalAccessException {
-        return (Double) object.getClass().getDeclaredField(field).get(object);
+        Class objectClass = object.getClass();
+
+        try {
+            return (Double) object.getClass().getDeclaredField(field).get(object);
+        } catch (NoSuchFieldException e) {
+            return (Double) getFieldByVariable(field, objectClass).get(object);
+        }
     }
 
     public static void setValueToField(Object object, String field, Double value) throws NoSuchFieldException, IllegalAccessException {
         object.getClass().getDeclaredField(field).set(object, value);
+    }
+
+    private static Field getFieldByVariable(String var, Class clazz) {
+
+        return Arrays.stream(clazz.getDeclaredFields())
+                .filter(f -> f.getAnnotation(Variable.class).value().equals(var)).findFirst().get();
     }
 }

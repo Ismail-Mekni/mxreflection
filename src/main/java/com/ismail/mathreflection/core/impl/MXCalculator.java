@@ -7,6 +7,7 @@ import com.ismail.mathreflection.models.FieldOrder;
 import com.ismail.mathreflection.models.MXFunction;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 
+import java.lang.reflect.Field;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -28,23 +29,31 @@ public class MXCalculator<T> implements Calculator<T> {
 
     @Override
     public void calculate(T object) {
-        fieldOrder.getOrderedFields().forEach(field -> {
-            Set<Double> variables = field.getVariables().stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
-                    .map(f -> {
-                        try {
-                            return ReflectionUtility.getFieldValue(f, object);
-                        } catch (NoSuchFieldException | IllegalAccessException e) {
-                            throw new AccessNotAllowedToReadException(f);
-                        }
-                    }).collect(Collectors.toSet());
+        fieldOrder.getOrderedFields().forEach(mxFunction -> calculateFieldValue(mxFunction, object));
+    }
 
-            Double result = field.getLambda().apply(variables);
+    private void calculateFieldValue(MXFunction mxFunction, Object object){
+        Set<Double> variables = mxFunction.getVariables().stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
+                .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toSet());
 
-            try {
-                ReflectionUtility.setValueToField(object, field.getFieldName(), result);
-            } catch (NoSuchFieldException | IllegalAccessException e) {
-                throw new AccessNotAllowedToWriteValueException(field.getFieldName());
-            }
-        });
+        Double result = mxFunction.getLambda().apply(variables);
+
+        writeValueToObjectField(mxFunction.getFieldName(), object, result);
+    }
+
+    private Double readValueFromObjectField(String field, Object object) {
+        try {
+            return ReflectionUtility.getFieldValue(field, object);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new AccessNotAllowedToReadException(field);
+        }
+    }
+
+    private void writeValueToObjectField(String field, Object object, Double value) {
+        try {
+            ReflectionUtility.setValueToField(object, field, value);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new AccessNotAllowedToWriteValueException(field);
+        }
     }
 }

@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/utilities/ReflectionUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ismail/mathreflection/utilities/ReflectionUtility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/core/MXCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/core/MXCalculatorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/factory/MathReflectionFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/factory/MathReflectionFactoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/utilities/BeanTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ismail/mathreflection/utilities/BeanTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.ismail.mathreflection.core.MXCalculatorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.ismail.mathreflection.core.MXCalculatorTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ismail.mathreflection.core.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ismail.mathreflection.core.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.ismail.mathreflection.core.MXCalculatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.ismail.mathreflection.core.MXCalculatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="165" key="#Tests_in_'mathreflection'/0.0.1920.1040@0.0.1920.1040" timestamp="1599166794743" />
-    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1599865417001">
+    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1600000767940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599865417001" />
+    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600000767940" />
     <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599472824616" />
     <state x="686" y="165" key="#mathreflection_[dependencies]" timestamp="1599166814970">
       <screen x="0" y="0" width="1920" height="1040" />

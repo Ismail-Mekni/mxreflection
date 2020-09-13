@@ -3,11 +3,11 @@ package com.ismail.mathreflection.utilities;
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.annotations.Variable;
 
-public class BeanTestParser {
+import java.util.Map;
 
-
+public class BeanTestUnparseableField {
     @Variable("f1")
-    public String field1;
+    public Map field1;
 
     @Variable("f2")
     public int field2;

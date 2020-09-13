@@ -28,13 +28,13 @@ public class ReflectionUtility {
         return field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName();
     }
 
-    public static Double getFieldValue(String field, Object object) throws NoSuchFieldException, IllegalAccessException {
+    public static Object getFieldValue(String field, Object object) throws NoSuchFieldException, IllegalAccessException {
         Class objectClass = object.getClass();
 
         try {
-            return (Double) object.getClass().getDeclaredField(field).get(object);
+            return object.getClass().getDeclaredField(field).get(object);
         } catch (NoSuchFieldException e) {
-            return (Double) getFieldByVariable(field, objectClass).get(object);
+            return getFieldByVariable(field, objectClass).get(object);
         }
     }
 

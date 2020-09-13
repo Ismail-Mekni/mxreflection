@@ -5,9 +5,9 @@ import com.ismail.mathreflection.exceptions.AccessNotAllowedToReadException;
 import com.ismail.mathreflection.exceptions.AccessNotAllowedToWriteValueException;
 import com.ismail.mathreflection.models.FieldOrder;
 import com.ismail.mathreflection.models.MXFunction;
+import com.ismail.mathreflection.parsers.Parser;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 
-import java.lang.reflect.Field;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -33,15 +33,13 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     private void calculateFieldValue(MXFunction mxFunction, Object object){
-        Set<Double> variables = mxFunction.getVariables().stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
-                .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toSet());
 
-        Double result = mxFunction.getLambda().apply(variables);
+        Double result = mxFunction.getLambda().apply(getVariableValues(mxFunction.getVariables(), object));
 
         writeValueToObjectField(mxFunction.getFieldName(), object, result);
     }
 
-    private Double readValueFromObjectField(String field, Object object) {
+    private Object readValueFromObjectField(String field, Object object) {
         try {
             return ReflectionUtility.getFieldValue(field, object);
         } catch (NoSuchFieldException | IllegalAccessException e) {
@@ -55,5 +53,10 @@ public class MXCalculator<T> implements Calculator<T> {
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new AccessNotAllowedToWriteValueException(field);
         }
+    }
+
+    private Set<Double> getVariableValues (Set<String> vars, Object object) {
+        return Parser.parseVariables(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
+                .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toSet()));
     }
 }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ismail.mathreflection.core.MXCalculatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-12T22:53:56" hostname="IMEKNI-PC" time="0.176">
+<testsuite name="com.ismail.mathreflection.core.MXCalculatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-13T22:48:25" hostname="IMEKNI-PC" time="0.252">
   <properties/>
-  <testcase name="calculateInitializerTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.14"/>
-  <testcase name="calculateSimpleBeanWithPublicAndDoubleFieldsTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.036"/>
+  <testcase name="calculateInitializerTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.159"/>
+  <testcase name="calculateBeanWithReadParserTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.048"/>
+  <testcase name="calculateSimpleBeanWithPublicAndDoubleFieldsTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.025"/>
+  <testcase name="calculateThrowUparseableFiledExceptionTest" classname="com.ismail.mathreflection.core.MXCalculatorTest" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

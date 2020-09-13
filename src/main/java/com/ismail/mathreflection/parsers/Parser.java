@@ -1,16 +1,19 @@
 package com.ismail.mathreflection.parsers;
 
+import com.ismail.mathreflection.exceptions.UnparseableFieldException;
+
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Parser {
 
-    private Set<Double> parsedVariables;
-
-    public Parser(Set<Double> parsedVariables) {
-        this.parsedVariables = parsedVariables;
-    }
-
-    private Set<Double> parseVariables(Set<Object> vars){
-        //TODO
+    public static Set<Double> parseVariables(Set<Object> vars) {
+        return vars.stream().map(var -> {
+            try {
+                return Double.parseDouble(String.valueOf(var));
+            } catch (Exception exception) {
+                throw new UnparseableFieldException(var.getClass().getName());
+            }
+        }).collect(Collectors.toSet());
     }
 }

@@ -9,7 +9,8 @@ public enum ExceptionMessageEnum {
     INVALID_SET_VARIABLES("Invalid set of variables"),
     ACCESS_NOT_ALLOWED_TO_READ("Can't access to read value, may be you are missing getter, for field: %s"),
     ACCESS_NOT_ALLOWED_TO_WRITE("Can't access to write value, may be you are missing setter, for field: %s"),
-    UNPARSEABLE_FIELD_TYPE("Unparseable field ,of type: %s,  to Double");
+    UNPARSEABLE_FIELD_TYPE("Unparseable field ,of type: %s,  to Double"),
+    UNPARSEABLE_FIELD_WRITE_TYPE("Can't parse Double to: %s");
 
     private String message;
 

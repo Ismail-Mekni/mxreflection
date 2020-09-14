@@ -2,11 +2,10 @@ package com.ismail.mathreflection.core;
 
 import com.ismail.mathreflection.core.impl.MXCalculator;
 import com.ismail.mathreflection.exceptions.UnparseableFieldException;
+import com.ismail.mathreflection.exceptions.UnparseableResultException;
 import com.ismail.mathreflection.factory.MXFactory;
 import com.ismail.mathreflection.models.Formula;
-import com.ismail.mathreflection.utilities.BeanTest;
-import com.ismail.mathreflection.utilities.BeanTestParser;
-import com.ismail.mathreflection.utilities.BeanTestUnparseableField;
+import com.ismail.mathreflection.utilities.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -77,7 +76,7 @@ public class MXCalculatorTest {
     }
 
     @Test(expected = UnparseableFieldException.class)
-    public void calculateThrowUparseableFiledExceptionTest() {
+    public void calculateThrowUparseableFieldExceptionTest() {
         calculator = MXFactory.createCalculator(BeanTestUnparseableField.class);
 
         BeanTestUnparseableField beanTest = new BeanTestUnparseableField();
@@ -87,6 +86,36 @@ public class MXCalculatorTest {
         beanTest.field2 = 6;
 
         calculator.calculate(beanTest);
+    }
+
+    @Test
+    public void calculateBeanWithWriteParserTest() {
+        calculator = MXFactory.createCalculator(BeanTestParserWrite.class);
+
+        BeanTestParserWrite beanTestParser = new BeanTestParserWrite();
+
+        beanTestParser.field1 = "5";
+
+        beanTestParser.field2 = 6;
+
+        calculator.calculate(beanTestParser);
+
+        assertEquals(-1, beanTestParser.field3);
+        assertEquals("10.0", beanTestParser.field4);
+    }
+
+    @Test(expected = UnparseableResultException.class)
+    public void calculateThrowUnparseableResultException() {
+        calculator = MXFactory.createCalculator(BeanTestUnparseableResult.class);
+
+        BeanTestUnparseableResult unparseableResult = new BeanTestUnparseableResult();
+
+
+        unparseableResult.field1 = "5";
+
+        unparseableResult.field2 = 6;
+
+        calculator.calculate(unparseableResult);
     }
 
 }

@@ -38,7 +38,7 @@ public class ReflectionUtility {
         }
     }
 
-    public static void setValueToField(Object object, String field, Double value) throws NoSuchFieldException, IllegalAccessException {
+    public static void setValueToField(Object object, String field, Object value) throws NoSuchFieldException, IllegalAccessException {
         object.getClass().getDeclaredField(field).set(object, value);
     }
 

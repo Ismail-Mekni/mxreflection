@@ -32,7 +32,7 @@ public class MXCalculator<T> implements Calculator<T> {
         fieldOrder.getOrderedFields().forEach(mxFunction -> calculateFieldValue(mxFunction, object));
     }
 
-    private void calculateFieldValue(MXFunction mxFunction, Object object){
+    private void calculateFieldValue(MXFunction mxFunction, Object object) {
 
         Double result = mxFunction.getLambda().apply(getVariableValues(mxFunction.getVariables(), object));
 
@@ -49,14 +49,18 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private void writeValueToObjectField(String field, Object object, Double value) {
         try {
-            ReflectionUtility.setValueToField(object, field, value);
+            ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new AccessNotAllowedToWriteValueException(field);
         }
     }
 
-    private Set<Double> getVariableValues (Set<String> vars, Object object) {
+    private Set<Double> getVariableValues(Set<String> vars, Object object) {
         return Parser.parseVariables(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
                 .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toSet()));
+    }
+
+    private Object parseValue(String field, Object object, Double value) throws NoSuchFieldException {
+        return Parser.parseResult(value, object.getClass().getDeclaredField(field).getType());
     }
 }

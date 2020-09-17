@@ -94,13 +94,13 @@ public class MXCalculatorTest {
 
         BeanTestParserWrite beanTestParser = new BeanTestParserWrite();
 
-        beanTestParser.field1 = "5";
+        beanTestParser.field1 = "4.2";
 
         beanTestParser.field2 = 6;
 
         calculator.calculate(beanTestParser);
 
-        assertEquals(-1, beanTestParser.field3);
+        assertEquals(Integer.valueOf(-1), beanTestParser.field3);
         assertEquals("10.0", beanTestParser.field4);
     }
 

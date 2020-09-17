@@ -13,8 +13,14 @@ public class BeanTestParserWrite {
     public int field2;
 
     @MXFormula("f1 - f2")
-    public int field3;
+    public Integer field3;
 
     @MXFormula("f1 + f2 + field3")
     public String field4;
+
+    @MXFormula("f1 * field4")
+    public double field5;
+
+    @MXFormula("sin(f2)")
+    public Double field6;
 }

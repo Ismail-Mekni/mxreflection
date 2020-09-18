@@ -18,11 +18,6 @@ public class MXCalculatorTest {
 
     private MXCalculator calculator;
 
-    @Before
-    public void setUp() {
-
-    }
-
     @Test
     public void calculateInitializerTest() {
 

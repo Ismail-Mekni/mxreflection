@@ -24,7 +24,7 @@ public class Parser {
             parsingMethodMap.put(Double.class, Double.class.getDeclaredMethod("valueOf", double.class));
             parsingMethodMap.put(Integer.class, Math.class.getDeclaredMethod("round", double.class));
             parsingMethodMap.put(Short.class, Math.class.getDeclaredMethod("round", double.class));
-            parsingMethodMap.put(Float.class, Float.class.getDeclaredMethod("valueOf", double.class));
+            parsingMethodMap.put(Float.class, Float.class.getDeclaredMethod("valueOf", float.class));
             parsingMethodMap.put(Long.class, Math.class.getDeclaredMethod("round", double.class));
             parsingMethodMap.put(String.class, String.class.getDeclaredMethod("valueOf", double.class));
             parsingMethodMap.put(BigInteger.class, Math.class.getDeclaredMethod("round", double.class));

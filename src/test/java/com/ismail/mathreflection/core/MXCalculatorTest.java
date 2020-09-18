@@ -6,7 +6,6 @@ import com.ismail.mathreflection.exceptions.UnparseableResultException;
 import com.ismail.mathreflection.factory.MXFactory;
 import com.ismail.mathreflection.models.Formula;
 import com.ismail.mathreflection.utilities.*;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;

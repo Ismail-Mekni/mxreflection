@@ -16,7 +16,10 @@ public class BeanTestParserWrite {
     public int field2;
 
     @MXFormula("f1 - f2")
-    public Integer field3;
+    public String field3;
+
+    @MXFormula("f1 - f2")
+    public Integer field4;
 
     @MXFormula("f1 * field4")
     public double field5;
@@ -41,9 +44,6 @@ public class BeanTestParserWrite {
 
     @MXFormula("f1 - f2")
     public Short field12;
-
-    @MXFormula("f1 - f2")
-    public byte field13;
 
     @MXFormula("f1 - f2")
     public Byte field14;

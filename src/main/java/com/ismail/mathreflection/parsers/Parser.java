@@ -22,14 +22,10 @@ public class Parser {
         try {
 
             parsingMethodMap.put(Double.class, Double.class.getDeclaredMethod("valueOf", double.class));
-            parsingMethodMap.put(Integer.class, Math.class.getDeclaredMethod("round", float.class));
-            parsingMethodMap.put(Short.class, Math.class.getDeclaredMethod("round", double.class));
-            parsingMethodMap.put(Float.class, Float.class.getDeclaredMethod("valueOf", float.class));
             parsingMethodMap.put(Long.class, Math.class.getDeclaredMethod("round", double.class));
             parsingMethodMap.put(String.class, String.class.getDeclaredMethod("valueOf", double.class));
-            parsingMethodMap.put(BigInteger.class, Math.class.getDeclaredMethod("round", double.class));
+            parsingMethodMap.put(BigInteger.class, Parser.class.getDeclaredMethod("toBigInteger", double.class));
             parsingMethodMap.put(BigDecimal.class, BigDecimal.class.getDeclaredMethod("valueOf", double.class));
-            parsingMethodMap.put(Byte.class, Byte.class.getDeclaredMethod("valueOf", byte.class));
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -69,5 +65,9 @@ public class Parser {
 
     private static <T> T parseToType(double result, Class<T> type) throws InvocationTargetException, IllegalAccessException {
         return (T) parsingMethodMap.get(type).invoke(null, result);
+    }
+
+    private static BigInteger toBigInteger(double value) {
+        return BigInteger.valueOf(Math.round(value));
     }
 }

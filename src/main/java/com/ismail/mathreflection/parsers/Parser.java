@@ -22,7 +22,7 @@ public class Parser {
         try {
 
             parsingMethodMap.put(Double.class, Double.class.getDeclaredMethod("valueOf", double.class));
-            parsingMethodMap.put(Integer.class, Math.class.getDeclaredMethod("round", double.class));
+            parsingMethodMap.put(Integer.class, Math.class.getDeclaredMethod("round", float.class));
             parsingMethodMap.put(Short.class, Math.class.getDeclaredMethod("round", double.class));
             parsingMethodMap.put(Float.class, Float.class.getDeclaredMethod("valueOf", float.class));
             parsingMethodMap.put(Long.class, Math.class.getDeclaredMethod("round", double.class));
@@ -67,7 +67,7 @@ public class Parser {
         return (T) methodToCall.invoke(result);
     }
 
-    private static <T extends Number> T parseToType(double result, Class<T> type) throws InvocationTargetException, IllegalAccessException {
+    private static <T> T parseToType(double result, Class<T> type) throws InvocationTargetException, IllegalAccessException {
         return (T) parsingMethodMap.get(type).invoke(null, result);
     }
 }

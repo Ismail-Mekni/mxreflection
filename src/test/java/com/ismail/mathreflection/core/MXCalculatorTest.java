@@ -8,7 +8,10 @@ import com.ismail.mathreflection.models.Formula;
 import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

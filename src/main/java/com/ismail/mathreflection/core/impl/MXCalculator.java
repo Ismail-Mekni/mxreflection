@@ -8,6 +8,7 @@ import com.ismail.mathreflection.models.MXFunction;
 import com.ismail.mathreflection.parsers.Parser;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -55,9 +56,9 @@ public class MXCalculator<T> implements Calculator<T> {
         }
     }
 
-    private Set<Double> getVariableValues(Set<String> vars, Object object) {
+    private List<Double> getVariableValues(Set<String> vars, Object object) {
         return Parser.parseVariables(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
-                .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toSet()));
+                .collect(Collectors.mapping(f -> readValueFromObjectField(f, object), Collectors.toList())));
     }
 
     private Object parseValue(String field, Object object, Double value) throws NoSuchFieldException {

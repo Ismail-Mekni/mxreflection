@@ -8,6 +8,7 @@ import com.ismail.mathreflection.models.Formula;
 import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
@@ -95,12 +96,12 @@ public class MXCalculatorTest {
         calculator.calculate(beanTestParser);
 
         assertEquals("-1.8", beanTestParser.field3);
-        assertEquals("10.0", beanTestParser.field5);
-        assertEquals("10.0", beanTestParser.field6);
-        assertEquals("10.0", beanTestParser.field9);
-        assertEquals("10.0", beanTestParser.field10);
-        assertEquals("10.0", beanTestParser.field15);
-        assertEquals("10.0", beanTestParser.field16);
+        assertEquals(25.2, beanTestParser.field5, 0.01);
+        assertEquals(-0.27941549819, beanTestParser.field6, 0.0001);
+        assertEquals(Long.valueOf(-2), beanTestParser.field10);
+        assertEquals(BigInteger.valueOf(-2), beanTestParser.field15);
+        assertEquals(-2, beanTestParser.field9);
+
     }
 
     @Test(expected = UnparseableResultException.class)

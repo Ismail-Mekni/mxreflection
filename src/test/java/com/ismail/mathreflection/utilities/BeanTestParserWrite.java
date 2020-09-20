@@ -3,7 +3,6 @@ package com.ismail.mathreflection.utilities;
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.annotations.Variable;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class BeanTestParserWrite {
@@ -33,6 +32,4 @@ public class BeanTestParserWrite {
     @MXFormula("f1 - f2")
     public BigInteger field15;
 
-    @MXFormula("f1 - f2")
-    public BigDecimal field16;
 }

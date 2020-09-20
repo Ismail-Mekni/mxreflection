@@ -7,6 +7,7 @@ import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.Function;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -48,7 +49,7 @@ public class MXFunction extends Formula<Function> {
 
     @Override
     protected void generatePredicate() {
-        this.lambda = (Set<Double> variables) -> {
+        this.lambda = (List<Double> variables) -> {
 
             String argsExpression = FUNCTION_SIGNATURE_PREFIX
                     + String.join(FUNCTION_VARIABLES_DELIMITER, variables.stream().map(var -> var.toString()).collect(Collectors.toSet()))

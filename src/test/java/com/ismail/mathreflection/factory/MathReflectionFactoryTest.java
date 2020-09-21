@@ -40,5 +40,4 @@ public class MathReflectionFactoryTest {
         MXFactory.createCalculator(BeanTestDuplicateName.class);
     }
 
-    // TODO NullPointerException for fields with null value
 }

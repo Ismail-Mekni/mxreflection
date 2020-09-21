@@ -3,6 +3,7 @@ package com.ismail.mathreflection.core.impl;
 import com.ismail.mathreflection.core.Calculator;
 import com.ismail.mathreflection.exceptions.AccessNotAllowedToReadException;
 import com.ismail.mathreflection.exceptions.AccessNotAllowedToWriteValueException;
+import com.ismail.mathreflection.exceptions.NullFieldValueException;
 import com.ismail.mathreflection.models.FieldOrder;
 import com.ismail.mathreflection.models.MXFunction;
 import com.ismail.mathreflection.parsers.Parser;
@@ -42,7 +43,12 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private Object readValueFromObjectField(String field, Object object) {
         try {
-            return ReflectionUtility.getFieldValue(field, object);
+            Object val = ReflectionUtility.getFieldValue(field, object);
+            if (val != null)
+                return val;
+            else
+                throw new NullFieldValueException(field);
+
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new AccessNotAllowedToReadException(field);
         }

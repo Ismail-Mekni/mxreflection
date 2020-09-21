@@ -10,7 +10,8 @@ public enum ExceptionMessageEnum {
     ACCESS_NOT_ALLOWED_TO_READ("Can't access to read value, may be you are missing getter, for field: %s"),
     ACCESS_NOT_ALLOWED_TO_WRITE("Can't access to write value, may be you are missing setter, for field: %s"),
     UNPARSEABLE_FIELD_TYPE("Unparseable field ,of type: %s,  to Double"),
-    UNPARSEABLE_FIELD_WRITE_TYPE("Can't parse Double to: %s");
+    UNPARSEABLE_FIELD_WRITE_TYPE("Can't parse Double to: %s"),
+    NULL_FIELD_VALUE("Null field value: %s");
 
     private String message;
 

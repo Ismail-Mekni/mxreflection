@@ -1,5 +1,6 @@
 package com.ismail.mathreflection.parsers;
 
+import com.ismail.mathreflection.exceptions.NullFieldValueException;
 import com.ismail.mathreflection.exceptions.UnparseableFieldException;
 import com.ismail.mathreflection.exceptions.UnparseableResultException;
 

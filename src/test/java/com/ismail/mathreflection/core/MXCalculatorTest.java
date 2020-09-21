@@ -10,12 +10,7 @@ import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

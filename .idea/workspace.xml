@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTestNullFieldValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/ExceptionMessageEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/ExceptionMessageEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/parsers/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/parsers/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/factory/MathReflectionFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +82,7 @@
       <recent name="D:\My projects\new\mathreflection\src\main\java\com\ismail\mathreflection\annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MXCalculatorTest">
+  <component name="RunManager" selected="Gradle.MXCalculatorTest.calculateWithPrivateVariables">
     <configuration name="MXCalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -128,12 +123,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MXCalculatorTest.jkldssfjsd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MXCalculatorTest.calculateWithPrivateVariables" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest.jkldssfjsd&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest.calculateWithPrivateVariables&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -211,17 +206,17 @@
       <item itemvalue="Gradle.mathreflection [build]" />
       <item itemvalue="Gradle.MathReflectionFactoryTest" />
       <item itemvalue="Gradle.MXCalculatorTest" />
-      <item itemvalue="Gradle.MXCalculatorTest.jkldssfjsd" />
       <item itemvalue="Gradle.MXCalculatorTest.lsdjkf" />
       <item itemvalue="Gradle.MXCalculatorTest.calculateThrowNullPointerException" />
+      <item itemvalue="Gradle.MXCalculatorTest.calculateWithPrivateVariables" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MXCalculatorTest.calculateWithPrivateVariables" />
         <item itemvalue="Gradle.MXCalculatorTest" />
         <item itemvalue="Gradle.MathReflectionFactoryTest" />
         <item itemvalue="Gradle.MXCalculatorTest.calculateThrowNullPointerException" />
         <item itemvalue="Gradle.MXCalculatorTest.lsdjkf" />
-        <item itemvalue="Gradle.MXCalculatorTest.jkldssfjsd" />
       </list>
     </recent_temporary>
   </component>
@@ -251,10 +246,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600334685636" />
-    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1600718951563">
+    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1600806182051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600718951563" />
+    <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600806182050" />
     <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600679192949" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600336347349">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -273,25 +268,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="444" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600634205808" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1600719971208">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1600806204122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600719971208" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1600719971208">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1600806204121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600719971208" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204121" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1600719971208">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1600806204120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600719971208" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204120" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1600719971208">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1600806204122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600719971208" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1600634349867">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -317,9 +312,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="179" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599168630795" />
-    <state x="667" y="276" width="586" height="488" key="find.popup" timestamp="1600188191439">
+    <state x="667" y="276" width="586" height="488" key="find.popup" timestamp="1600806525656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="667" y="276" width="586" height="488" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600806525656" />
     <state x="667" y="276" width="586" height="488" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600188191439" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1599595362640">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -130,4 +130,18 @@ public class MXCalculatorTest {
 
     }
 
+    @Test
+    public void calculateWithPrivateVariables(){
+
+        calculator = MXFactory.createCalculator(BeanTestPrivateVariable.class);
+
+        BeanTestPrivateVariable beanTest = new BeanTestPrivateVariable(5, 6);
+
+        calculator.calculate(beanTest);
+
+        assertEquals(-1.0, beanTest.field3, 0.01);
+
+        assertEquals(10.0, beanTest.field4, 0.01);
+    }
+
 }

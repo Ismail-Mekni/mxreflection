@@ -64,7 +64,7 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private List<Double> getVariableValues(Set<String> vars, Object object) {
         return Parser.parseVariables(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
-                .collect(Collectors.mapping(f -> readValueFromObjectField(f, object), Collectors.toList())));
+                .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toList()));
     }
 
     private Object parseValue(String field, Object object, Double value) throws NoSuchFieldException {

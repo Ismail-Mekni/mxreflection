@@ -28,7 +28,7 @@ public class ReflectionUtility {
         return field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName();
     }
 
-    public static Object getFieldValue(String field, Object object) throws NoSuchFieldException, IllegalAccessException {
+    public static Object getFieldValue(String field, Object object) throws IllegalAccessException {
         Class objectClass = object.getClass();
 
         try {

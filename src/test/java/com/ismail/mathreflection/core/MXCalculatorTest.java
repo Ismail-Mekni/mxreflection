@@ -106,7 +106,7 @@ public class MXCalculatorTest {
     }
 
     @Test(expected = UnparseableResultException.class)
-    public void calculateThrowUnparseableResultException() {
+    public void calculateThrowUnparseableResultExceptionTest() {
         calculator = MXFactory.createCalculator(BeanTestUnparseableResult.class);
 
         BeanTestUnparseableResult unparseableResult = new BeanTestUnparseableResult();
@@ -120,7 +120,7 @@ public class MXCalculatorTest {
     }
 
     @Test(expected = NullFieldValueException.class)
-    public void calculateThrowNullPointerException(){
+    public void calculateThrowNullPointerExceptionTest(){
         calculator = MXFactory.createCalculator(BeanTestNullFieldValue.class);
 
         BeanTestNullFieldValue bean = new BeanTestNullFieldValue();
@@ -131,7 +131,7 @@ public class MXCalculatorTest {
     }
 
     @Test
-    public void calculateWithPrivateVariables(){
+    public void calculateWithPrivateVariablesTest(){
 
         calculator = MXFactory.createCalculator(BeanTestPrivateVariable.class);
 
@@ -142,6 +142,19 @@ public class MXCalculatorTest {
         assertEquals(-1.0, beanTest.field3, 0.01);
 
         assertEquals(10.0, beanTest.field4, 0.01);
+    }
+
+    @Test
+    public void calculateWithPrivateFieldAsResultFormulaTest(){
+        calculator = MXFactory.createCalculator(BeanTestPrivateFormula.class);
+
+        BeanTestPrivateFormula beanTest = new BeanTestPrivateFormula(5, 6);
+
+        calculator.calculate(beanTest);
+
+        assertEquals(-1.0, beanTest.getField3(), 0.01);
+
+        assertEquals(10.0, beanTest.getField4(), 0.01);
     }
 
 }

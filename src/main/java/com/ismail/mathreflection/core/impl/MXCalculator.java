@@ -49,7 +49,7 @@ public class MXCalculator<T> implements Calculator<T> {
             else
                 throw new NullFieldValueException(field);
 
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+        } catch (IllegalAccessException e) {
             throw new AccessNotAllowedToReadException(field);
         }
     }

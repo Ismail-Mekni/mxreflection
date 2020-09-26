@@ -38,8 +38,10 @@ public class ReflectionUtility {
         }
     }
 
-    public static void setValueToField(Object object, String field, Object value) throws NoSuchFieldException, IllegalAccessException {
-        object.getClass().getDeclaredField(field).set(object, value);
+    public static void setValueToField(Object object, String fieldName, Object value) throws NoSuchFieldException, IllegalAccessException {
+        Field field = object.getClass().getDeclaredField(fieldName);
+        field.setAccessible(true);
+        field.set(object, value);
     }
 
     private static Field getFieldByVariable(String var, Class clazz) {

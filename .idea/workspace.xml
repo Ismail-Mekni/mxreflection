@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +82,33 @@
       <recent name="D:\My projects\new\mathreflection\src\main\java\com\ismail\mathreflection\annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MXCalculatorTest.calculateWithPrivateVariables">
+  <component name="RunManager" selected="Gradle.MXCalculatorTest">
     <configuration name="MXCalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MXCalculatorTest.calculateSimpleBeanWithPublicAndDoubleFieldsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest.calculateSimpleBeanWithPublicAndDoubleFieldsTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -129,26 +149,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest.calculateWithPrivateVariables&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MXCalculatorTest.lsdjkf" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.core.MXCalculatorTest.lsdjkf&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -206,17 +206,17 @@
       <item itemvalue="Gradle.mathreflection [build]" />
       <item itemvalue="Gradle.MathReflectionFactoryTest" />
       <item itemvalue="Gradle.MXCalculatorTest" />
-      <item itemvalue="Gradle.MXCalculatorTest.lsdjkf" />
       <item itemvalue="Gradle.MXCalculatorTest.calculateThrowNullPointerException" />
       <item itemvalue="Gradle.MXCalculatorTest.calculateWithPrivateVariables" />
+      <item itemvalue="Gradle.MXCalculatorTest.calculateSimpleBeanWithPublicAndDoubleFieldsTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MXCalculatorTest.calculateWithPrivateVariables" />
         <item itemvalue="Gradle.MXCalculatorTest" />
+        <item itemvalue="Gradle.MXCalculatorTest.calculateSimpleBeanWithPublicAndDoubleFieldsTest" />
+        <item itemvalue="Gradle.MXCalculatorTest.calculateWithPrivateVariables" />
         <item itemvalue="Gradle.MathReflectionFactoryTest" />
         <item itemvalue="Gradle.MXCalculatorTest.calculateThrowNullPointerException" />
-        <item itemvalue="Gradle.MXCalculatorTest.lsdjkf" />
       </list>
     </recent_temporary>
   </component>
@@ -259,11 +259,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="165" key="#mathreflection_[dependencies]/0.0.1920.1040@0.0.1920.1040" timestamp="1599166814970" />
-    <state x="715" y="231" width="1090" height="577" key="#xdebugger.evaluate" timestamp="1600634224081">
+    <state x="715" y="231" width="1118" height="577" key="#xdebugger.evaluate" timestamp="1601157679845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="231" width="1090" height="577" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1600634224081" />
-    <state x="715" y="231" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599473247872" />
+    <state x="715" y="231" width="1118" height="577" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157679845" />
     <state width="444" height="466" key="DebuggerActiveHint" timestamp="1600634205808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,46 +272,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600855920117" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1600806204122">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1600806204121">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1601157994173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204121" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1600806204120">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994173" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1601157994173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204120" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1600806204122">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994173" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1601157994173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600705464219" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1600634349867">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994173" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600423510636" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1600634349867">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600423510636" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1600634349867">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600423510636" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1600634349867">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600423510636" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
     <state x="490" y="179" key="Maven.ArtifactSearchDialog" timestamp="1599168630795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,8 +341,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="31" />
+          <line>45</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -28,13 +28,13 @@ public class ReflectionUtility {
         return field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName();
     }
 
-    public static Object getFieldValue(String field, Object object) throws IllegalAccessException {
+    public static Object getFieldValue(String fieldName, Object object) throws IllegalAccessException {
         Class objectClass = object.getClass();
 
         try {
-            return object.getClass().getDeclaredField(field).get(object);
+            return getValueFromField(object.getClass().getDeclaredField(fieldName), object);
         } catch (NoSuchFieldException e) {
-            return getFieldByVariable(field, objectClass).get(object);
+            return getValueFromField(getFieldByVariable(fieldName, objectClass), object);
         }
     }
 
@@ -46,5 +46,10 @@ public class ReflectionUtility {
 
         return Arrays.stream(clazz.getDeclaredFields())
                 .filter(f -> f.getAnnotation(Variable.class).value().equals(var)).findFirst().get();
+    }
+
+    private static Object getValueFromField(Field field, Object object) throws IllegalAccessException {
+        field.setAccessible(true);
+        return field.get(object);
     }
 }

@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
+/**
+ * {@inheritDoc}
+ */
 public class MXCalculator<T> implements Calculator<T> {
 
     private FieldOrder<MXFunction> fieldOrder;
@@ -30,11 +32,17 @@ public class MXCalculator<T> implements Calculator<T> {
         return fieldOrder;
     }
 
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public void calculate(T object) {
         fieldOrder.getOrderedFields().forEach(mxFunction -> calculateFieldValue(mxFunction, object));
     }
 
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public void calculate(Collection<T> objects){
         objects.forEach(this::calculate);

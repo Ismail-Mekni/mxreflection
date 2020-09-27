@@ -10,8 +10,18 @@ import com.ismail.mathreflection.utilities.ReflectionUtility;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * The factory responsible for the calculator initialization
+ */
 public class MXFactory {
 
+    /**
+     * Generates a calculator to be used with the given type
+     *
+     * @param clazz The class type to be used with the calculator
+     * @param <T> The type to be used with the generated calculator
+     * @return A class of type Calculator, the engine that is used to calculate functions
+     */
     public static <T> MXCalculator<T> createCalculator(Class<T> clazz) {
 
         Map<String, MXFunction> annotatedFields = getAnnotatedMXFormulaFieldsAndValuesMap(clazz);

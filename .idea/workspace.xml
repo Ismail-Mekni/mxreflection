@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/annotations/MXFormula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/annotations/MXFormula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/annotations/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/annotations/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/factory/MXFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/factory/MXFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/core/MXCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/BeanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +345,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java</url>
-          <line>51</line>
+          <line>59</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>

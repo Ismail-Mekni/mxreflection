@@ -1,6 +1,6 @@
 package com.ismail.mathreflection.exceptions;
 
-public enum ExceptionMessageEnum {
+enum ExceptionMessageEnum {
 
     NO_FORMULA_FOUND_FOR_TYPE("No formula found for the given type: %s"),
     NOT_VALID_FORMULA("Not valid formula: %s for field %s: %s"),
@@ -19,7 +19,7 @@ public enum ExceptionMessageEnum {
         this.message = message;
     }
 
-    public String getMessage(){
+    String getMessage(){
         return message;
     }
 }

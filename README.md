@@ -39,4 +39,10 @@ As you can see above, MathReflection can help supports several data type parsing
 You can launch the calculation with two simple steps, first you create the calculator, juste one calculator per data type, and then you use the object to be calculated as a parameter:
 
     calculator = MXFactory.createCalculator(JavaBean.class);
+    JavaBean javaBean = new JavaBean();
+    javaBean.field1="5.5";
+    javaBean.field2=2;
     calculator.calculate(javaBean); // javaBean is an instance of JavaBean class
+
+Now, the magic happens, all the fields annotated with `@MXFormula` are injected with the required values.
+Of course the same features are available for even if you hava used private fields.

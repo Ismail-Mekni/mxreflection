@@ -71,6 +71,19 @@ public class MXCalculatorTest {
     }
 
     @Test(expected = UnparseableFieldException.class)
+    public void calculateStringUnparseableFieldExceptionTest() {
+        Calculator<BeanTestParser> calculator = MXFactory.createCalculator(BeanTestParser.class);
+
+        BeanTestParser beanTest = new BeanTestParser();
+
+        beanTest.field1 = "Hello world";
+
+        beanTest.field2 = 6;
+
+        calculator.calculate(beanTest);
+    }
+
+    @Test(expected = UnparseableFieldException.class)
     public void calculateThrowUparseableFieldExceptionTest() {
         Calculator<BeanTestUnparseableField> calculator = MXFactory.createCalculator(BeanTestUnparseableField.class);
 

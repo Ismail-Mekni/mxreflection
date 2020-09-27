@@ -5,24 +5,23 @@ import com.ismail.mathreflection.exceptions.NullFieldValueException;
 import com.ismail.mathreflection.exceptions.UnparseableFieldException;
 import com.ismail.mathreflection.exceptions.UnparseableResultException;
 import com.ismail.mathreflection.factory.MXFactory;
-import com.ismail.mathreflection.models.Formula;
 import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class MXCalculatorTest {
 
-    private MXCalculator calculator;
-
     @Test
     public void calculateInitializerTest() {
 
-        calculator = MXFactory.createCalculator(BeanTest.class);
+        MXCalculator<BeanTest> calculator = MXFactory.createCalculator(BeanTest.class);
 
         assertNotNull(calculator.getFieldOrder());
 
@@ -30,15 +29,15 @@ public class MXCalculatorTest {
 
         assertEquals(2, calculator.getFieldOrder().getOrderedFields().size());
 
-        assertEquals("field3", ((Formula) calculator.getFieldOrder().getOrderedFields().poll()).getFieldName());
+        assertEquals("field3", calculator.getFieldOrder().getOrderedFields().poll().getFieldName());
 
-        assertEquals("field4", ((Formula) calculator.getFieldOrder().getOrderedFields().poll()).getFieldName());
+        assertEquals("field4", calculator.getFieldOrder().getOrderedFields().poll().getFieldName());
 
     }
 
     @Test
     public void calculateSimpleBeanWithPublicAndDoubleFieldsTest() {
-        calculator = MXFactory.createCalculator(BeanTest.class);
+        Calculator<BeanTest> calculator = MXFactory.createCalculator(BeanTest.class);
 
         BeanTest beanTest = new BeanTest();
 
@@ -56,7 +55,7 @@ public class MXCalculatorTest {
     @Test
     public void calculateBeanWithReadParserTest() {
 
-        calculator = MXFactory.createCalculator(BeanTestParser.class);
+        Calculator<BeanTestParser> calculator = MXFactory.createCalculator(BeanTestParser.class);
 
         BeanTestParser beanTest = new BeanTestParser();
 
@@ -73,7 +72,7 @@ public class MXCalculatorTest {
 
     @Test(expected = UnparseableFieldException.class)
     public void calculateThrowUparseableFieldExceptionTest() {
-        calculator = MXFactory.createCalculator(BeanTestUnparseableField.class);
+        Calculator<BeanTestUnparseableField> calculator = MXFactory.createCalculator(BeanTestUnparseableField.class);
 
         BeanTestUnparseableField beanTest = new BeanTestUnparseableField();
 
@@ -86,7 +85,7 @@ public class MXCalculatorTest {
 
     @Test
     public void calculateBeanWithWriteParserTest() {
-        calculator = MXFactory.createCalculator(BeanTestParserWrite.class);
+        Calculator<BeanTestParserWrite> calculator = MXFactory.createCalculator(BeanTestParserWrite.class);
 
         BeanTestParserWrite beanTestParser = new BeanTestParserWrite();
 
@@ -107,7 +106,7 @@ public class MXCalculatorTest {
 
     @Test(expected = UnparseableResultException.class)
     public void calculateThrowUnparseableResultExceptionTest() {
-        calculator = MXFactory.createCalculator(BeanTestUnparseableResult.class);
+        Calculator<BeanTestUnparseableResult> calculator = MXFactory.createCalculator(BeanTestUnparseableResult.class);
 
         BeanTestUnparseableResult unparseableResult = new BeanTestUnparseableResult();
 
@@ -121,7 +120,7 @@ public class MXCalculatorTest {
 
     @Test(expected = NullFieldValueException.class)
     public void calculateThrowNullPointerExceptionTest(){
-        calculator = MXFactory.createCalculator(BeanTestNullFieldValue.class);
+        Calculator<BeanTestNullFieldValue> calculator = MXFactory.createCalculator(BeanTestNullFieldValue.class);
 
         BeanTestNullFieldValue bean = new BeanTestNullFieldValue();
         bean.field1= 1.2;
@@ -133,7 +132,7 @@ public class MXCalculatorTest {
     @Test
     public void calculateWithPrivateVariablesTest(){
 
-        calculator = MXFactory.createCalculator(BeanTestPrivateVariable.class);
+        Calculator<BeanTestPrivateVariable> calculator = MXFactory.createCalculator(BeanTestPrivateVariable.class);
 
         BeanTestPrivateVariable beanTest = new BeanTestPrivateVariable(5, 6);
 
@@ -146,7 +145,7 @@ public class MXCalculatorTest {
 
     @Test
     public void calculateWithPrivateFieldAsResultFormulaTest(){
-        calculator = MXFactory.createCalculator(BeanTestPrivateFormula.class);
+        Calculator<BeanTestPrivateFormula> calculator = MXFactory.createCalculator(BeanTestPrivateFormula.class);
 
         BeanTestPrivateFormula beanTest = new BeanTestPrivateFormula(5, 6);
 
@@ -155,6 +154,21 @@ public class MXCalculatorTest {
         assertEquals(-1.0, beanTest.getField3(), 0.01);
 
         assertEquals(10.0, beanTest.getField4(), 0.01);
+    }
+
+    @Test
+    public void calculateCollections(){
+        Calculator<BeanTest> calculator = MXFactory.createCalculator(BeanTest.class);
+
+        List<BeanTest> beans = Arrays.asList(new BeanTest(2, 5), new BeanTest(3, 2.5));
+
+        calculator.calculate(beans);
+
+        assertEquals(-3, beans.get(0).field3, 0.001);
+        assertEquals(4, beans.get(0).field4, 0.001);
+
+        assertEquals(0.5, beans.get(1).field3, 0.001);
+        assertEquals(6, beans.get(1).field4, 0.001);
     }
 
 }

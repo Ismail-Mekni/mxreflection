@@ -21,7 +21,7 @@ public class MXFactory {
 
         FieldOrder fieldOrder=new FieldOrder(annotatedFields, clazz);
 
-        return new MXCalculator(fieldOrder);
+        return new MXCalculator<T>(fieldOrder);
     }
 
     private static boolean checkAnnotatedFields(Map annotatedFields) {

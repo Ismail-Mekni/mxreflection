@@ -9,6 +9,7 @@ import com.ismail.mathreflection.models.MXFunction;
 import com.ismail.mathreflection.parsers.Parser;
 import com.ismail.mathreflection.utilities.ReflectionUtility;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,6 +33,11 @@ public class MXCalculator<T> implements Calculator<T> {
     @Override
     public void calculate(T object) {
         fieldOrder.getOrderedFields().forEach(mxFunction -> calculateFieldValue(mxFunction, object));
+    }
+
+    @Override
+    public void calculate(Collection<T> objects){
+        objects.forEach(this::calculate);
     }
 
     private void calculateFieldValue(MXFunction mxFunction, Object object) {

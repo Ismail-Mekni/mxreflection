@@ -16,4 +16,12 @@ public class BeanTest {
 
     @MXFormula("f1 + f2 + field3")
     public double field4;
+
+    public BeanTest(double field1, double field2) {
+        this.field1 = field1;
+        this.field2 = field2;
+    }
+
+    public BeanTest() {
+    }
 }

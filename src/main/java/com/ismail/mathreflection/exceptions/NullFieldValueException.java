@@ -1,5 +1,8 @@
 package com.ismail.mathreflection.exceptions;
 
+/**
+ * Null Field Value Exception is raised when a given variable field is null
+ */
 public class NullFieldValueException extends RuntimeException {
 
     public NullFieldValueException(String message) {

@@ -4,6 +4,7 @@ import com.ismail.mathreflection.exceptions.UnparseableFieldException;
 import com.ismail.mathreflection.exceptions.UnparseableResultException;
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,7 +34,12 @@ public class ParserTest {
 
     @Test
     public void parseResultTest() {
-
+        assertEquals(Double.MAX_VALUE, Parser.parseResult(Double.MAX_VALUE, Double.class), 0.00001);
+        assertEquals(Double.MAX_VALUE, Parser.parseResult(Double.MAX_VALUE, double.class), 0.00001);
+        assertEquals(Long.valueOf(Math.round(Double.MAX_VALUE)), Parser.parseResult(Double.MAX_VALUE, Long.class));
+        assertEquals(BigInteger.valueOf(Math.round(Double.MAX_VALUE)), Parser.parseResult(Double.MAX_VALUE, BigInteger.class));
+        assertEquals(Long.valueOf(Math.round(Double.MAX_VALUE)), Parser.parseResult(Double.MAX_VALUE, long.class));
+        assertEquals(String.valueOf(Double.MAX_VALUE), Parser.parseResult(Double.MAX_VALUE, String.class));
     }
 
     @Test(expected = UnparseableFieldException.class)

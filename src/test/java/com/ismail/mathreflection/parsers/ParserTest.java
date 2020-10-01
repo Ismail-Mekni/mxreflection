@@ -43,6 +43,6 @@ public class ParserTest {
 
     @Test(expected = UnparseableResultException.class)
     public void parseResultUnparseableResultExceptionTest() {
-
+        Parser.parseResult(2.8, int.class);
     }
 }

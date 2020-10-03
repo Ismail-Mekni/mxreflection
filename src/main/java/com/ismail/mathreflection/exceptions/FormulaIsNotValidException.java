@@ -5,8 +5,6 @@ package com.ismail.mathreflection.exceptions;
  * or invalid operators
  */
 public class FormulaIsNotValidException extends RuntimeException {
-    public FormulaIsNotValidException() {
-    }
 
     public FormulaIsNotValidException(String... message) {
         super(String.format(ExceptionMessageEnum.NOT_VALID_FORMULA.getMessage(), message));

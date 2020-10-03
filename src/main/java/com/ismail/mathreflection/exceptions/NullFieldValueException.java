@@ -9,6 +9,4 @@ public class NullFieldValueException extends RuntimeException {
         super(String.format(ExceptionMessageEnum.NULL_FIELD_VALUE.getMessage(), message));
     }
 
-    public NullFieldValueException() {
-    }
 }

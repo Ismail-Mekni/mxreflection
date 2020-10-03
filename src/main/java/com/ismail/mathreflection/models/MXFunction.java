@@ -21,9 +21,6 @@ public class MXFunction extends Formula<Function> {
 
     private static final String FUNCTION_VARIABLES_DELIMITER = ", ";
 
-    public MXFunction() {
-    }
-
     public MXFunction(Field field, Class clazz) {
         this.fieldName = ReflectionUtility.getFieldName(field);
 

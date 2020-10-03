@@ -9,6 +9,4 @@ public class UnparseableFieldException extends RuntimeException {
         super(String.format(ExceptionMessageEnum.UNPARSEABLE_FIELD_TYPE.getMessage(), message));
     }
 
-    public UnparseableFieldException() {
-    }
 }

@@ -31,31 +31,12 @@ public abstract class Formula<T> {
         return fieldName;
     }
 
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
-    }
-
     public Set<String> getVariables() {
         return variables;
-    }
-
-    public void setVariables(Set<String> variables) {
-        this.variables = variables;
-    }
-
-    public T getFunction() {
-        return function;
-    }
-
-    public void setFunction(T function) {
-        this.function = function;
     }
 
     public Function<List<Double>, Double> getLambda() {
         return lambda;
     }
 
-    public void setLambda(Function lambda) {
-        this.lambda = lambda;
-    }
 }

@@ -10,6 +10,4 @@ public class UnparseableResultException extends RuntimeException {
         super(String.format(ExceptionMessageEnum.UNPARSEABLE_FIELD_WRITE_TYPE.getMessage(), message));
     }
 
-    public UnparseableResultException() {
-    }
 }

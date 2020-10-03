@@ -21,9 +21,6 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private FieldOrder<MXFunction> fieldOrder;
 
-    public MXCalculator() {
-    }
-
     public MXCalculator(FieldOrder<MXFunction> fieldOrder) {
         this.fieldOrder = fieldOrder;
     }

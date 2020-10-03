@@ -14,10 +14,6 @@ public class FieldOrder <T extends Formula> {
 
     private Queue<T> orderedFields;
 
-    public FieldOrder(){
-
-    }
-
     public FieldOrder(Map<String, T> fieldMap, Class clazz){
         this.orderedFields = sortFieldsByFormulaDependency(fieldMap, clazz);
     }
@@ -58,7 +54,4 @@ public class FieldOrder <T extends Formula> {
         return orderedFields;
     }
 
-    public void setOrderedFields(Queue<T> orderedFields) {
-        this.orderedFields = orderedFields;
-    }
 }

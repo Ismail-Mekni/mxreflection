@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/parsers/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/parsers/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/AccessNotAllowedToReadException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/AccessNotAllowedToReadException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/AccessNotAllowedToWriteValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/AccessNotAllowedToWriteValueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/CycleFormulaDependencyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/CycleFormulaDependencyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/DuplicatedVariableNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/DuplicatedVariableNameException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/FormulaIsNotValidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/FormulaIsNotValidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/NoFormulaFoundForTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/NoFormulaFoundForTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/NullFieldValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/NullFieldValueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/UnparseableFieldException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/UnparseableFieldException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/UnparseableResultException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/exceptions/UnparseableResultException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/FieldOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/FieldOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/MXFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/MXFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/parsers/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/parsers/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/MXFormulaUtility.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +29,9 @@
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="216" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -284,28 +302,28 @@
     </state>
     <state x="592" y="221" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601564712608" />
     <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1600855920117" />
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1601592218024">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1601761597195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601592218024" />
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601761597195" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601235715004" />
-    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1601592218024">
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1601761597195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601592218024" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601761597195" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204121" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601235715004" />
-    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1601592218024">
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1601761597195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601592218024" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601761597195" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204120" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601235715004" />
-    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1601592218024">
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1601761597195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601592218024" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601761597195" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601235715004" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601157994174">
@@ -351,20 +369,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/models/MXFunction.java</url>
-          <line>58</line>
+          <line>55</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/parsers/Parser.java</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java</url>
-          <line>59</line>
+          <line>56</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mathreflection$Tests_in__mathreflection_test_.ic" NAME="Tests in 'mathreflection.test' Coverage Results" MODIFIED="1601761506670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

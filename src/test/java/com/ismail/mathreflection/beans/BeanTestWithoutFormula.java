@@ -1,4 +1,4 @@
-package com.ismail.mathreflection.utilities;
+package com.ismail.mathreflection.beans;
 
 public class BeanTestWithoutFormula {
     public int field1;

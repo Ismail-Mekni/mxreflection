@@ -1,13 +1,13 @@
-package com.ismail.mathreflection.utilities;
+package com.ismail.mathreflection.beans;
 
 import com.ismail.mathreflection.annotations.MXFormula;
 import com.ismail.mathreflection.annotations.Variable;
 
-import java.util.Map;
+public class BeanTestParser {
 
-public class BeanTestUnparseableField {
+
     @Variable("f1")
-    public Map field1;
+    public String field1;
 
     @Variable("f2")
     public int field2;

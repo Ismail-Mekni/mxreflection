@@ -1,11 +1,11 @@
 package com.ismail.mathreflection.core;
 
+import com.ismail.mathreflection.beans.*;
 import com.ismail.mathreflection.core.impl.MXCalculator;
 import com.ismail.mathreflection.exceptions.NullFieldValueException;
 import com.ismail.mathreflection.exceptions.UnparseableFieldException;
 import com.ismail.mathreflection.exceptions.UnparseableResultException;
 import com.ismail.mathreflection.factory.MXFactory;
-import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
 import java.math.BigInteger;

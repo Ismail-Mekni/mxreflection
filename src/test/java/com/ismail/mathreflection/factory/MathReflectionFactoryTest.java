@@ -1,11 +1,11 @@
 package com.ismail.mathreflection.factory;
 
+import com.ismail.mathreflection.beans.*;
 import com.ismail.mathreflection.core.impl.MXCalculator;
 import com.ismail.mathreflection.exceptions.CycleFormulaDependencyException;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import com.ismail.mathreflection.exceptions.FormulaIsNotValidException;
 import com.ismail.mathreflection.exceptions.NoFormulaFoundForTypeException;
-import com.ismail.mathreflection.utilities.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;

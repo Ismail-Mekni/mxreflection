@@ -1,4 +1,4 @@
-package com.ismail.mathreflection.utilities;
+package com.ismail.mathreflection.beans;
 
 import com.ismail.mathreflection.annotations.MXFormula;
 

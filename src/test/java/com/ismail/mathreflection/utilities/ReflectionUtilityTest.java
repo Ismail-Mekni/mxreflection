@@ -1,11 +1,13 @@
 package com.ismail.mathreflection.utilities;
 
 import com.ismail.mathreflection.beans.BeanTest;
+import com.ismail.mathreflection.beans.BeanTestDuplicateName;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -27,11 +29,20 @@ public class ReflectionUtilityTest {
     @Test
     public void getClassFieldNamesTest(){
 
+        Set<String> fieldNames = ReflectionUtility.getClassFieldNames(BeanTest.class);
+
+        assertEquals(5, fieldNames.size());
+        assertTrue(fieldNames.contains("f1"));
+        assertTrue(fieldNames.contains("f2"));
+        assertTrue(fieldNames.contains("field3"));
+        assertTrue(fieldNames.contains("field4"));
+        assertTrue(fieldNames.contains("field5"));
     }
 
     @Test(expected = DuplicatedVariableNameException.class)
     public void getClassFieldNamesDuplicatedVariableNameExceptionTest(){
 
+        ReflectionUtility.getClassFieldNames(BeanTestDuplicateName.class);
     }
 
     @Test

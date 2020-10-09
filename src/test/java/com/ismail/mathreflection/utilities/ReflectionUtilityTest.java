@@ -6,6 +6,7 @@ import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
+import java.sql.Ref;
 import java.util.List;
 import java.util.Set;
 
@@ -46,8 +47,18 @@ public class ReflectionUtilityTest {
     }
 
     @Test
-    public void getFieldNameTest(){
+    public void getFieldNameWithoutVariableAnnotationTest() throws NoSuchFieldException {
 
+        String fieldName = ReflectionUtility.getFieldName(BeanTest.class.getDeclaredField("field5"));
+        assertEquals("field5", fieldName);
+
+    }
+
+    @Test
+    public void getFieldNameWithVariableAnnotationFieldTest() throws NoSuchFieldException {
+
+        String annotatedFieldName = ReflectionUtility.getFieldName(BeanTest.class.getField("field1"));
+        assertEquals("f1", annotatedFieldName);
     }
 
     @Test

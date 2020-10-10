@@ -87,11 +87,6 @@ public class ReflectionUtilityTest {
 
     }
 
-    @Test(expected = NoSuchFieldException.class)
-    public void getFieldValueTestNoSuchFieldException(){
-
-    }
-
     @Test
     public void setValueToFieldTest(){
 

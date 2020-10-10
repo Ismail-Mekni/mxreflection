@@ -6,12 +6,12 @@ enum ExceptionMessageEnum {
     NOT_VALID_FORMULA("Not valid formula: %s for field %s: %s"),
     CYCLE_EXISTS_IN_CLASS("Cyclic relationship between formula and variables in type: %s"),
     DUPLICATE_VARIABLE_NAME("A duplicated name used for different variable in type: %s"),
-    INVALID_SET_VARIABLES("Invalid set of variables"),
     ACCESS_NOT_ALLOWED_TO_READ("Can't access to read value for field: %s"),
     ACCESS_NOT_ALLOWED_TO_WRITE("Can't access to write value for field: %s"),
     UNPARSEABLE_FIELD_TYPE("Unparseable field ,of type: %s,  to Double"),
     UNPARSEABLE_FIELD_WRITE_TYPE("Can't parse Double to: %s"),
-    NULL_FIELD_VALUE("Null field value: %s");
+    NULL_FIELD_VALUE("Null field value: %s"),
+    FIELD_WITH_NAME_NOT_FIND("Field not found with name: %s");
 
     private String message;
 

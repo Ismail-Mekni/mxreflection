@@ -2,6 +2,7 @@ package com.ismail.mathreflection.utilities;
 
 import com.ismail.mathreflection.annotations.Variable;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
+import com.ismail.mathreflection.exceptions.FieldWithNameNotFoundException;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -46,8 +47,12 @@ public class ReflectionUtility {
 
     private static Field getFieldByVariable(String var, Class clazz) {
 
-        return Arrays.stream(clazz.getDeclaredFields())
-                .filter(f -> f.getAnnotation(Variable.class).value().equals(var)).findFirst().get();
+        try {
+            return Arrays.stream(clazz.getDeclaredFields())
+                    .filter(f -> f.getAnnotation(Variable.class).value().equals(var)).findFirst().get();
+        } catch (NullPointerException e) {
+            throw new FieldWithNameNotFoundException(var);
+        }
     }
 
     private static Object getValueFromField(Field field, Object object) throws IllegalAccessException {

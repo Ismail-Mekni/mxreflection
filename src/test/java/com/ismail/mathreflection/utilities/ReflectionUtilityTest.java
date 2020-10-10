@@ -4,9 +4,11 @@ import com.ismail.mathreflection.beans.BeanTest;
 import com.ismail.mathreflection.beans.BeanTestDuplicateName;
 import com.ismail.mathreflection.beans.BeanTestParserWrite;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
+import com.ismail.mathreflection.exceptions.FieldWithNameNotFoundException;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
+import java.sql.Ref;
 import java.util.List;
 import java.util.Set;
 
@@ -85,6 +87,13 @@ public class ReflectionUtilityTest {
         assertEquals("5.258", field5Value);
         assertEquals(3, field4Value);
 
+    }
+
+    @Test(expected = FieldWithNameNotFoundException.class)
+    public void getFieldValueTestNoSuchFieldException() throws IllegalAccessException {
+        BeanTestParserWrite beanTest = new BeanTestParserWrite();
+
+        ReflectionUtility.getFieldValue("hello", beanTest);
     }
 
     @Test

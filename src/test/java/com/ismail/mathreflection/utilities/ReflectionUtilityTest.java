@@ -2,11 +2,11 @@ package com.ismail.mathreflection.utilities;
 
 import com.ismail.mathreflection.beans.BeanTest;
 import com.ismail.mathreflection.beans.BeanTestDuplicateName;
+import com.ismail.mathreflection.beans.BeanTestParserWrite;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
-import java.sql.Ref;
 import java.util.List;
 import java.util.Set;
 
@@ -62,7 +62,28 @@ public class ReflectionUtilityTest {
     }
 
     @Test
-    public void getFieldValueTest(){
+    public void getFieldValueWithoutVariableAnnotationTest() throws IllegalAccessException {
+        BeanTest beanTest = new BeanTest();
+        beanTest.setField5("5.258");
+        beanTest.setField4(3.5);
+        String field5Value = (String) ReflectionUtility.getFieldValue("field5", beanTest);
+        double field4Value = (double) ReflectionUtility.getFieldValue("field4", beanTest);
+
+        assertEquals("5.258", field5Value);
+        assertEquals(3.5, field4Value, 0.00001);
+
+    }
+
+    @Test
+    public void getFieldValueWithVariableAnnotationTest() throws IllegalAccessException {
+        BeanTestParserWrite beanTest = new BeanTestParserWrite();
+        beanTest.field1 = "5.258";
+        beanTest.field2 = 3;
+        String field5Value = (String) ReflectionUtility.getFieldValue("f1", beanTest);
+        int field4Value = (int) ReflectionUtility.getFieldValue("f2", beanTest);
+
+        assertEquals("5.258", field5Value);
+        assertEquals(3, field4Value);
 
     }
 

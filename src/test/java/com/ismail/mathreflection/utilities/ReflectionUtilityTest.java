@@ -3,12 +3,12 @@ package com.ismail.mathreflection.utilities;
 import com.ismail.mathreflection.beans.BeanTest;
 import com.ismail.mathreflection.beans.BeanTestDuplicateName;
 import com.ismail.mathreflection.beans.BeanTestParserWrite;
+import com.ismail.mathreflection.exceptions.AccessNotAllowedToWriteValueException;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import com.ismail.mathreflection.exceptions.FieldWithNameNotFoundException;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
-import java.sql.Ref;
 import java.util.List;
 import java.util.Set;
 
@@ -97,7 +97,28 @@ public class ReflectionUtilityTest {
     }
 
     @Test
-    public void setValueToFieldTest(){
+    public void setValueToPublicFieldTest(){
 
+        BeanTest beanTest = new BeanTest();
+
+        ReflectionUtility.setValueToField(beanTest, "field1", 3.5);
+
+        assertEquals(3.5, beanTest.field1, 0.0001);
+    }
+
+    @Test
+    public void setValueToPrivateFieldTest(){
+        BeanTest beanTest = new BeanTest();
+
+        ReflectionUtility.setValueToField(beanTest, "field5", "3.5");
+
+        assertEquals("3.5", beanTest.getField5());
+    }
+
+    @Test(expected = AccessNotAllowedToWriteValueException.class)
+    public void setValueToFieldUnknownFieldNameTest(){
+        BeanTest beanTest = new BeanTest();
+
+        ReflectionUtility.setValueToField(beanTest, "hello", "3.0");
     }
 }

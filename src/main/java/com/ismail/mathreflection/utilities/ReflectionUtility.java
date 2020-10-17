@@ -1,6 +1,7 @@
 package com.ismail.mathreflection.utilities;
 
 import com.ismail.mathreflection.annotations.Variable;
+import com.ismail.mathreflection.exceptions.AccessNotAllowedToWriteValueException;
 import com.ismail.mathreflection.exceptions.DuplicatedVariableNameException;
 import com.ismail.mathreflection.exceptions.FieldWithNameNotFoundException;
 
@@ -39,10 +40,14 @@ public class ReflectionUtility {
         }
     }
 
-    public static void setValueToField(Object object, String fieldName, Object value) throws NoSuchFieldException, IllegalAccessException {
-        Field field = object.getClass().getDeclaredField(fieldName);
-        field.setAccessible(true);
-        field.set(object, value);
+    public static void setValueToField(Object object, String fieldName, Object value) {
+        try {
+            Field field = object.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            field.set(object, value);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new AccessNotAllowedToWriteValueException(fieldName);
+        }
     }
 
     private static Field getFieldByVariable(String var, Class clazz) {

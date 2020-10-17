@@ -66,11 +66,7 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     private void writeValueToObjectField(String field, Object object, Double value) {
-        try {
             ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new AccessNotAllowedToWriteValueException(field);
-        }
     }
 
     private List<Double> getVariableValues(Set<String> vars, Object object) {
@@ -78,7 +74,11 @@ public class MXCalculator<T> implements Calculator<T> {
                 .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toList()));
     }
 
-    private Object parseValue(String field, Object object, Double value) throws NoSuchFieldException {
-        return Parser.parseResult(value, object.getClass().getDeclaredField(field).getType());
+    private Object parseValue(String field, Object object, Double value) {
+        try {
+            return Parser.parseResult(value, object.getClass().getDeclaredField(field).getType());
+        } catch (NoSuchFieldException e) {
+            throw new AccessNotAllowedToWriteValueException(field);
+        }
     }
 }

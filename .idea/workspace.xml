@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/core/impl/MXCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mathreflection/utilities/ReflectionUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/ReflectionUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mathreflection/utilities/ReflectionUtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,27 +89,7 @@
       <recent name="D:\My projects\new\mathreflection\src\main\java\com\ismail\mathreflection\annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'mathreflection.test'">
-    <configuration name="ReflectionUtilityTest.getFieldValueTestNoSuchFieldException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.utilities.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.mathreflection [pitest]">
     <configuration name="ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -157,6 +136,26 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.utilities.ReflectionUtilityTest.setValueToPublicFieldTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'com.ismail.mathreflection'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.*&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -232,19 +231,19 @@
     <list>
       <item itemvalue="Gradle.mathreflection [build]" />
       <item itemvalue="Gradle.mathreflection [pitest]" />
-      <item itemvalue="Gradle.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException" />
       <item itemvalue="Gradle.Tests in 'mathreflection.test'" />
       <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPublicFieldTest" />
       <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPrivateFieldTest" />
       <item itemvalue="Gradle.ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" />
+      <item itemvalue="Gradle.Tests in 'com.ismail.mathreflection'" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'com.ismail.mathreflection'" />
         <item itemvalue="Gradle.Tests in 'mathreflection.test'" />
         <item itemvalue="Gradle.ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" />
         <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPrivateFieldTest" />
         <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPublicFieldTest" />
-        <item itemvalue="Gradle.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException" />
       </list>
     </recent_temporary>
   </component>
@@ -270,11 +269,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="165" key="#Tests_in_'mathreflection'/0.0.1920.1040@0.0.1920.1040" timestamp="1599166794743" />
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602687413523">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603099742260">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="331" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601376365390" />
     <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602687413523" />
+    <state x="2334" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603099742260" />
     <state x="765" y="240" width="769" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1602370418755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -305,35 +305,40 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="444" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600634205808" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1602685720729">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2660" y="279" key="FileChooserDialogImpl" timestamp="1603099764688">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="592" y="221" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601564712608" />
     <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602685720729" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602961681184">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2660" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603099764688" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603101664521">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601853556112" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602961681184" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602961681183">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554705" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664521" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603101664520">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204121" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602961681183" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602961681183">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554704" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664520" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603101664520">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204120" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602961681183" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602961681184">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554704" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664520" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603101664521">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600806204122" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602961681184" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554705" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664521" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601157994174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -358,11 +363,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="179" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599168630795" />
-    <state x="349" y="73" key="SettingsEditor" timestamp="1602685733220">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2269" y="73" key="SettingsEditor" timestamp="1603099782594">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601376252208" />
     <state x="349" y="73" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602685733220" />
+    <state x="2269" y="73" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603099782594" />
     <state x="668" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1602682026916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -400,6 +406,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mathreflection$Tests_in__mathreflection_test_.ic" NAME="Tests in 'mathreflection.test' Coverage Results" MODIFIED="1601761506670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/mathreflection$Tests_in__mathreflection_test_.ic" NAME="Tests in 'mathreflection.test' Coverage Results" MODIFIED="1602961846552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

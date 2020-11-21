@@ -15,10 +15,10 @@ plugins {
 apply plugin: 'info.solidsoft.pitest'
 
 pitest {
-    targetClasses = ['com.ismail.mathreflection.*']
+    targetClasses = ['com.ismail.mxreflection.*']
 }
 
-group 'org.ismail'
+group 'com.ismail'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8

@@ -1,7 +1,12 @@
 # MXReflection  
 A Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
 
-You can calculate complex mathematical operations and functions with Java, just by using class related fields, MXReflection reads values from the assigned fields and injects the results in the `@MXFormula` annotated fields:  
+You can calculate complex mathematical operations and functions with Java, just by using class related fields, MXReflection reads values from the assigned fields and injects the results in the `@MXFormula` annotated fields.
+
+ - With `@Variable`  value we can assign customized argument names to be used in the target function.
+ - `@MXFormula` annotation value contains the function expression with the arguments.
+
+First example:
 
     class Example1 {
     
@@ -35,24 +40,23 @@ The result:
 
 MXReflection supports all the [math collection](http://mathparser.org/mxparser-math-collection/) available in mXparser math library:
 
- - [Operators](http://mathparser.org/mxparser-math-collection/operators/)
-- [Binary Relations](http://mathparser.org/mxparser-math-collection/binary-relations/)
-- [Boolean Operators](http://mathparser.org/mxparser-math-collection/boolean-operators/)
-- [Bitwise Operators](http://mathparser.org/mxparser-math-collection/bitwise-operators/)
+ - [Operators](http://mathparser.org/mxparser-math-collection/operators/) (+, -, *, /, #, !, ^)
+- [Binary Relations](http://mathparser.org/mxparser-math-collection/binary-relations/) (=, ==, =<, =>, <, >, <>, !=, ~=)
+- [Boolean Operators](http://mathparser.org/mxparser-math-collection/boolean-operators/) (&, &&, /\, ~&, ~&&, ~/\, |, ||, \/, ~|, ~||, ~\/, (+), -->, <--, -/>, </-, <->, ~)
+- [Bitwise Operators](http://mathparser.org/mxparser-math-collection/bitwise-operators/) (@~, @&, @^, @|, @<<, @>>)
 - [Unary Functions](http://mathparser.org/mxparser-math-collection/unary-functions/)
-- [Binary Functions](http://mathparser.org/mxparser-math-collection/binary-functions/)
-- [3-args Functions](http://mathparser.org/mxparser-math-collection/3-args-functions/)
-- [Variadic Functions](http://mathparser.org/mxparser-math-collection/variadic-functions/)
-- [Iterated Operators](http://mathparser.org/mxparser-math-collection/iterated-operators/)
-- [Calculus Operators](http://mathparser.org/mxparser-math-collection/calculus-operators/)
+- [Binary Functions](http://mathparser.org/mxparser-math-collection/binary-functions/) (log, mod, C, Bern, Stirl1, Stirl2, Worp, Euler, KDelta, EulerPol, Harm, rUni, rUnid, round, rNor)
+- [3-args Functions](http://mathparser.org/mxparser-math-collection/3-args-functions/) (if, chi, CHi, Chi, cHi, pUni, cUni, qUni, pNor, cNor, qNor)
+- [Variadic Functions](http://mathparser.org/mxparser-math-collection/variadic-functions/) (iff, min, max, ConFrac, ConPol, gcd, lcm, add, multi, mean, var, std, rList)
+- [Iterated Operators](http://mathparser.org/mxparser-math-collection/iterated-operators/) (sum, prod, avg, vari, stdi, mini, maxi)
+- [Calculus Operators](http://mathparser.org/mxparser-math-collection/calculus-operators/) (int, der, der-, der+, dern, diff, difb)
 - [Math Constants](http://mathparser.org/mxparser-math-collection/constants/)
-- [Physical Constants](http://mathparser.org/mxparser-math-collection/physical-constants/)
+- [Physical Constants](http://mathparser.org/mxparser-math-collection/physical-constants/) ([c], [G.], [g], [hP], [h-], [lP], [mP], [tP])
 - [Astronomical Constants](http://mathparser.org/mxparser-math-collection/astronomical-constants/)
 - [Random Variables](http://mathparser.org/mxparser-math-collection/random-variables/)
-- [Metric prefixes](http://mathparser.org/mxparser-math-collection/metric-prefixes/)
+- [Metric prefixes](http://mathparser.org/mxparser-math-collection/metric-prefixes/) ([%], [%%], [Y], [sept], [Z], [sext], [E], [quint], [P], [quad], [T], [tril], [G], [bil], [M], [mil], [k], [th], [hecto], [hund], [deca], [ten], [deci], [centi], [milli], [mic], [n], [p], [f], [a], [z], [y])
 - [Units](http://mathparser.org/mxparser-math-collection/units/)
-- [Parser Symbols](http://mathparser.org/mxparser-math-collection/parser-symbols/)
-- [Scientific number types](http://mathparser.org/mxparser-math-collection/number-formats/)
+- [Parser Symbols](http://mathparser.org/mxparser-math-collection/parser-symbols/) ((, ), ,, ;)
 
 ## MXReflection parsing
 ### Argument parsing
@@ -70,13 +74,15 @@ Supported result field java types:
  - String
  - BigInteger
 
- **You should note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommanded to be sure that the formula returns and integer type.**
+ **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommanded to be sure that the formula returns and integer type.**
   
 ## Result reuse
 
-The field result :    
+With MXReflection, you can use function results as arguments for other results:    
 
-     public class JavaBean {          
+Second example:
+
+     public class Example2{          
          @Variable("f1")  
          public String field1;          
      
@@ -89,27 +95,15 @@ The field result :
          @MXFormula("f1 * f2")  
          public double field5;          
      
-         @MXFormula("sin(f2)")  
+         @MXFormula("sin(field5)")  
          public Double field6;          
      
-         @MXFormula("f1 - f2")  
-         public long field9;          
-     
-         @MXFormula("f1 - f2")  
-         public Long field10;          
-     
-         @MXFormula("f1 - f2")  
-         public BigInteger field15; 
+         @MXFormula("field5 - field6")  
+         public long field9;  
     }
 
   
 
-The variables annotated with `@MXFormula` are going to be calculated using the functions written as annotation value. `@Variable` is optional, it is used to customize the field name that will be used in the formula description.  
-  
-As you can see above, MathReflection can help supports several data type parsing.  
-  
-You can launch the calculation with two simple steps, first you create the calculator, juste one calculator per data type, and then you use the object to be calculated as a parameter:  
-  
- calculator = MXFactory.createCalculator(JavaBean.class); JavaBean javaBean = new JavaBean(); javaBean.field1="5.5"; javaBean.field2=2; calculator.calculate(javaBean); // javaBean is an instance of JavaBean class  
-Now, the magic happens, all the fields annotated with `@MXFormula` are injected with the required values.  
-Of course the same features are available for even if you hava used private fields.
+MXReflection resolves a graph of dependencies between results and variables, it makes sure that there is no cycle in the field dependency. 
+
+## Installation

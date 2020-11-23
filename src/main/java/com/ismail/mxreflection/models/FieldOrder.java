@@ -21,7 +21,7 @@ public class FieldOrder <T extends Formula> {
     private Queue<T> sortFieldsByFormulaDependency(Map<String, T> fields, Class clazz) {
         Graph<String, DefaultEdge> fieldRelationshipGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
 
-        ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(ReflectionUtility.getFieldName(field)));
+        ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(ReflectionUtility.getVariableName(field)));
 
         fields.values().forEach(field -> addGraphEdges(fieldRelationshipGraph, field));
 
@@ -47,7 +47,7 @@ public class FieldOrder <T extends Formula> {
     }
 
     private void addGraphEdges(Graph<String, DefaultEdge> graph, T field) {
-        field.getVariables().forEach(f -> graph.addEdge(field.fieldName, (String) f));
+        field.getVariables().forEach(f -> graph.addEdge(field.variableName, (String) f));
     }
 
     public Queue<T> getOrderedFields() {

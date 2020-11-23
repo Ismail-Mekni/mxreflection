@@ -24,6 +24,7 @@ public class MXFunction extends Formula<Function> {
     public MXFunction(Field field, Class clazz) {
         this.fieldName = ReflectionUtility.getFieldName(field);
 
+        this.variableName = ReflectionUtility.getVariableName(field);
         String expression = field.getAnnotation(MXFormula.class).value();
         this.variables = extractVariables(expression, clazz);
         this.function = generateFunction(variables, field);

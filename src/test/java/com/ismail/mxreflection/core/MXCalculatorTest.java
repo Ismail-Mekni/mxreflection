@@ -184,4 +184,21 @@ public class MXCalculatorTest {
         assertEquals(6, beans.get(1).field4, 0.001);
     }
 
+    @Test
+    public void calculateWithAnnotationMix() {
+        Calculator<BeanTestAnnotationMix> calculatorMix = MXFactory.createCalculator(BeanTestAnnotationMix.class);
+
+        BeanTestAnnotationMix beanMix = new BeanTestAnnotationMix();
+
+        beanMix.field1="5";
+        beanMix.field2="3";
+
+        calculatorMix.calculate(beanMix);
+
+        assertEquals("8.0", beanMix.field3);
+
+        assertEquals("13.0", beanMix.field4);
+
+    }
+
 }

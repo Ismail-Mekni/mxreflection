@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f96fa219-1440-4d65-9518-ea5f53f30a3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/factory/MXFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/factory/MXFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/FieldOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/FieldOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/Formula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/Formula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/MXFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/MXFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/utilities/ReflectionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/utilities/ReflectionUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mxreflection/core/MXCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mxreflection/core/MXCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ismail/mxreflection/utilities/ReflectionUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ismail/mxreflection/utilities/ReflectionUtilityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +89,27 @@
       <recent name="D:\My projects\new\mathreflection\src\main\java\com\ismail\mathreflection\annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.mathreflection [pitest]">
+  <component name="RunManager" selected="Gradle.Tests in 'mathreflection.test'">
+    <configuration name="MXCalculatorTest.calculateWithAnnotationMix" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.ismail.mxreflection.core.MXCalculatorTest.calculateWithAnnotationMix&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -110,26 +136,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.utilities.ReflectionUtilityTest.setValueToPrivateFieldTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReflectionUtilityTest.setValueToPublicFieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.ismail.mathreflection.utilities.ReflectionUtilityTest.setValueToPublicFieldTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -226,18 +232,18 @@
       <item itemvalue="Gradle.mathreflection [build]" />
       <item itemvalue="Gradle.mathreflection [pitest]" />
       <item itemvalue="Gradle.Tests in 'mathreflection.test'" />
-      <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPublicFieldTest" />
       <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPrivateFieldTest" />
       <item itemvalue="Gradle.ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" />
       <item itemvalue="Gradle.Tests in 'com.ismail.mathreflection'" />
+      <item itemvalue="Gradle.MXCalculatorTest.calculateWithAnnotationMix" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'mathreflection.test'" />
+        <item itemvalue="Gradle.MXCalculatorTest.calculateWithAnnotationMix" />
         <item itemvalue="Gradle.Tests in 'com.ismail.mathreflection'" />
         <item itemvalue="Gradle.ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest" />
         <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPrivateFieldTest" />
-        <item itemvalue="Gradle.ReflectionUtilityTest.setValueToPublicFieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -291,68 +297,68 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="165" key="#mathreflection_[dependencies]/0.0.1920.1040@0.0.1920.1040" timestamp="1599166814970" />
-    <state x="715" y="231" width="1118" height="577" key="#xdebugger.evaluate" timestamp="1601157679845">
+    <state x="601" y="234" width="1118" height="577" key="#xdebugger.evaluate" timestamp="1606171552950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="715" y="231" width="1090" height="577" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1600634224081" />
+    <state x="601" y="234" width="1090" height="577" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1606171552950" />
     <state x="715" y="231" width="1118" height="577" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157679845" />
-    <state width="444" height="466" key="DebuggerActiveHint" timestamp="1600634205808">
+    <state width="493" height="466" key="DebuggerActiveHint" timestamp="1606172131880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="444" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600634205808" />
+    <state width="493" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1606172131880" />
     <state x="2660" y="279" key="FileChooserDialogImpl" timestamp="1603099764688">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="592" y="221" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601564712608" />
     <state x="740" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602685720729" />
     <state x="2660" y="279" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603099764688" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605987004419">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606172342946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601853556112" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605987004419" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606172342946" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554705" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664521" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605987004419">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606172342946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605987004419" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606172342946" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554704" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664520" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605987004419">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606172342945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605987004419" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606172342945" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554704" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664520" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605987004419">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606172342946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601853556111" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605987004419" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606172342946" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603099554705" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1603101664521" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601157994174">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606172159978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606172159978" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1601157994174">
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1606172159978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606172159978" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1601157994174">
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1606172159978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606172159978" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1601157994174">
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1606172159978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600634349867" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606172159978" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601157994174" />
     <state x="490" y="179" key="Maven.ArtifactSearchDialog" timestamp="1599168630795">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -384,7 +390,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/MXFunction.java</url>
-          <line>55</line>
+          <line>56</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -396,6 +402,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/core/impl/MXCalculator.java</url>
           <line>56</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/FieldOrder.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ismail/mxreflection/models/FieldOrder.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

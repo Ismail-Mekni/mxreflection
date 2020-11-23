@@ -51,7 +51,7 @@ public class ReflectionUtilityTest {
     @Test
     public void getFieldNameWithoutVariableAnnotationTest() throws NoSuchFieldException {
 
-        String fieldName = ReflectionUtility.getFieldName(BeanTest.class.getDeclaredField("field5"));
+        String fieldName = ReflectionUtility.getVariableName(BeanTest.class.getDeclaredField("field5"));
         assertEquals("field5", fieldName);
 
     }
@@ -59,7 +59,7 @@ public class ReflectionUtilityTest {
     @Test
     public void getFieldNameWithVariableAnnotationFieldTest() throws NoSuchFieldException {
 
-        String annotatedFieldName = ReflectionUtility.getFieldName(BeanTest.class.getField("field1"));
+        String annotatedFieldName = ReflectionUtility.getVariableName(BeanTest.class.getField("field1"));
         assertEquals("f1", annotatedFieldName);
     }
 

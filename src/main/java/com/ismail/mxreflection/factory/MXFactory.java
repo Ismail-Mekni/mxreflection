@@ -44,7 +44,7 @@ public class MXFactory {
     private static Map<String, MXFunction> getAnnotatedMXFormulaFieldsAndValuesMap(Class clazz) {
 
         return ReflectionUtility.getClassFields(clazz).stream().filter(f -> f.getAnnotation(MXFormula.class) != null)
-                .map(f -> new MXFunction(f, clazz)).collect(Collectors.toMap(MXFunction::getFieldName, f -> f));
+                .map(f -> new MXFunction(f, clazz)).collect(Collectors.toMap(MXFunction::getVariableName, f -> f));
     }
 
 }

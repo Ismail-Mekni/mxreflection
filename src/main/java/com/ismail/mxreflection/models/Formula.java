@@ -13,6 +13,8 @@ public abstract class Formula<T> {
 
     protected String fieldName;
 
+    protected String variableName;
+
     protected Set<String> variables;
 
     protected T function;
@@ -29,6 +31,10 @@ public abstract class Formula<T> {
 
     public String getFieldName() {
         return fieldName;
+    }
+
+    public String getVariableName() {
+        return variableName;
     }
 
     public Set<String> getVariables() {

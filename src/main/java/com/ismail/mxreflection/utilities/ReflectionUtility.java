@@ -29,8 +29,12 @@ public class ReflectionUtility {
         else return fieldNames;
     }
 
-    public static String getFieldName(Field field) {
+    public static String getVariableName(Field field) {
         return field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName();
+    }
+
+    public static String getFieldName(Field field) {
+        return field.getName();
     }
 
     public static Object getFieldValue(String fieldName, Object object) throws IllegalAccessException {

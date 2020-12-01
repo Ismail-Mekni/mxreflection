@@ -5,27 +5,26 @@ import com.ismail.mxreflection.utilities.ReflectionUtility;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public abstract class Formula<T> {
+public abstract class AbstractFunction<T> {
 
 
     protected String fieldName;
 
-    protected String variableName;
+    protected String argumentName;
 
-    protected Set<String> variables;
+    protected Set<String> arguments;
 
     protected T function;
 
-    protected Function<List<Double>, Double> lambda;
+    protected java.util.function.Function<List<Double>, Double> lambda;
 
-    protected Set<String> extractVariables(String expression, Class clazz) {
+    protected Set<String> extractArguments(String expression, Class clazz) {
         return ReflectionUtility.getClassFieldNames(clazz).stream().filter(expression::contains).collect(Collectors.toSet());
     }
 
-    protected abstract T generateFunction(Set<String> variables, Field field);
+    protected abstract T generateFunction(Set<String> arguments, Field field);
 
     protected abstract void generatePredicate();
 
@@ -33,15 +32,15 @@ public abstract class Formula<T> {
         return fieldName;
     }
 
-    public String getVariableName() {
-        return variableName;
+    public String getArgumentName() {
+        return argumentName;
     }
 
-    public Set<String> getVariables() {
-        return variables;
+    public Set<String> getArguments() {
+        return arguments;
     }
 
-    public Function<List<Double>, Double> getLambda() {
+    public java.util.function.Function<List<Double>, Double> getLambda() {
         return lambda;
     }
 

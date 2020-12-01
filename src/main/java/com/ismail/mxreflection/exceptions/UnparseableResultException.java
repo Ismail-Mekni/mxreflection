@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Unparseable Result Exception is raised when the MXFormula annotated field is within valid type collection (Long, Double,
+ * Unparseable Result Exception is raised when the Expression annotated field is within valid type collection (Long, Double,
  * BigInteger, String)
  */
 public class UnparseableResultException extends RuntimeException {

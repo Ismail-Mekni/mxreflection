@@ -13,12 +13,12 @@ import static org.junit.Assert.assertEquals;
 public class ParserTest {
 
     @Test
-    public void parseVariablesTest() {
+    public void parseArgumentsTest() {
         List<Object> testObjects = Arrays.asList("3.5", 4, 4.5, 999999999999999999L,
                 2.55555555555555555555, Float.valueOf(4.5F), Integer.valueOf(4)
                 , Long.valueOf(9999999999999999L), Double.valueOf(2.55555555555555555555));
 
-        List<Double> values = Parser.parseVariables(testObjects);
+        List<Double> values = Parser.parseArguments(testObjects);
 
         assertEquals(3.5, values.get(0), 0.001);
         assertEquals(4, values.get(1), 0.001);
@@ -43,8 +43,8 @@ public class ParserTest {
     }
 
     @Test(expected = UnparseableFieldException.class)
-    public void parseVariablesUnparseableFieldExceptionTest() {
-        Parser.parseVariables(Arrays.asList("hello", 2.9));
+    public void parseArgumentsUnparseableFieldExceptionTest() {
+        Parser.parseArguments(Arrays.asList("hello", 2.9));
     }
 
     @Test(expected = UnparseableResultException.class)

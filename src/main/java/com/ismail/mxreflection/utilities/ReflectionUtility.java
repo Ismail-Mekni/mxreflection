@@ -1,8 +1,8 @@
 package com.ismail.mxreflection.utilities;
 
-import com.ismail.mxreflection.annotations.Variable;
+import com.ismail.mxreflection.annotations.Arg;
 import com.ismail.mxreflection.exceptions.AccessNotAllowedToWriteValueException;
-import com.ismail.mxreflection.exceptions.DuplicatedVariableNameException;
+import com.ismail.mxreflection.exceptions.DuplicatedArgumentNameException;
 import com.ismail.mxreflection.exceptions.FieldWithNameNotFoundException;
 
 import java.lang.reflect.Field;
@@ -22,15 +22,15 @@ public class ReflectionUtility {
 
     public static Set<String> getClassFieldNames(Class clazz) {
         Set<String> fieldNames = Arrays.stream(clazz.getDeclaredFields())
-                .map(field -> field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName())
+                .map(field -> field.getAnnotation(Arg.class) != null ? field.getAnnotation(Arg.class).value() : field.getName())
                 .collect(Collectors.toSet());
         if (fieldNames.size() != clazz.getDeclaredFields().length)
-            throw new DuplicatedVariableNameException(clazz.getName());
+            throw new DuplicatedArgumentNameException(clazz.getName());
         else return fieldNames;
     }
 
-    public static String getVariableName(Field field) {
-        return field.getAnnotation(Variable.class) != null ? field.getAnnotation(Variable.class).value() : field.getName();
+    public static String getArgumentName(Field field) {
+        return field.getAnnotation(Arg.class) != null ? field.getAnnotation(Arg.class).value() : field.getName();
     }
 
     public static String getFieldName(Field field) {
@@ -43,7 +43,7 @@ public class ReflectionUtility {
         try {
             return getValueFromField(object.getClass().getDeclaredField(fieldName), object);
         } catch (NoSuchFieldException e) {
-            return getValueFromField(getFieldByVariable(fieldName, objectClass), object);
+            return getValueFromField(getFieldByArgument(fieldName, objectClass), object);
         }
     }
 
@@ -57,11 +57,11 @@ public class ReflectionUtility {
         }
     }
 
-    private static Field getFieldByVariable(String var, Class clazz) {
+    private static Field getFieldByArgument(String var, Class clazz) {
 
         try {
             return Arrays.stream(clazz.getDeclaredFields())
-                    .filter(f -> f.getAnnotation(Variable.class).value().equals(var)).findFirst().get();
+                    .filter(f -> f.getAnnotation(Arg.class).value().equals(var)).findFirst().get();
         } catch (NullPointerException e) {
             throw new FieldWithNameNotFoundException(var);
         }

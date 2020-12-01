@@ -47,7 +47,7 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private void calculateFieldValue(MXFunction mxFunction, Object object) {
 
-        Double result = mxFunction.getLambda().apply(getVariableValues(mxFunction.getVariables(), object));
+        Double result = mxFunction.getLambda().apply(getArgumentValues(mxFunction.getArguments(), object));
 
         writeValueToObjectField(mxFunction.getFieldName(), object, result);
     }
@@ -69,8 +69,8 @@ public class MXCalculator<T> implements Calculator<T> {
             ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
     }
 
-    private List<Double> getVariableValues(Set<String> vars, Object object) {
-        return Parser.parseVariables(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
+    private List<Double> getArgumentValues(Set<String> vars, Object object) {
+        return Parser.parseArguments(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
                 .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toList()));
     }
 

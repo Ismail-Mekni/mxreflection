@@ -1,26 +1,26 @@
 package com.ismail.mxreflection.beans;
 
-import com.ismail.mxreflection.annotations.MXFormula;
-import com.ismail.mxreflection.annotations.Variable;
+import com.ismail.mxreflection.annotations.Expression;
+import com.ismail.mxreflection.annotations.Arg;
 
-public class BeanTestPrivateFormula {
+public class BeanTestPrivateExpression {
 
 
-    @Variable("f1")
+    @Arg("f1")
     private double field1;
 
-    @Variable("f2")
+    @Arg("f2")
     private double field2;
 
-    public BeanTestPrivateFormula(double field1, double field2) {
+    public BeanTestPrivateExpression(double field1, double field2) {
         this.field1 = field1;
         this.field2 = field2;
     }
 
-    @MXFormula("f1 - f2")
+    @Expression("f1 - f2")
     private double field3;
 
-    @MXFormula("f1 + f2 + field3")
+    @Expression("f1 + f2 + field3")
     private double field4;
 
     public double getField1() {

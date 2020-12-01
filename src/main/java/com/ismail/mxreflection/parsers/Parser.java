@@ -30,7 +30,7 @@ public class Parser {
 
     }
 
-    public static List<Double> parseVariables(List<Object> vars) {
+    public static List<Double> parseArguments(List<Object> vars) {
         return vars.stream().map(var -> {
             try {
                 return Double.parseDouble(String.valueOf(var));

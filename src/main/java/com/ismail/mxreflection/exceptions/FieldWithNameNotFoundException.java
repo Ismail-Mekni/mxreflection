@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Field not found with a given value of variable annotation
+ * Field not found with a given value of argument annotation
  * Note: This exception indicates an internal error in the framework
  */
 public class FieldWithNameNotFoundException extends RuntimeException {

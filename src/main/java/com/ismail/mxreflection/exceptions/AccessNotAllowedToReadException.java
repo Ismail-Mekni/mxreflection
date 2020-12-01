@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Access Not Allowed To Read Exception is raised when MXReflection can't access a variable value
+ * Access Not Allowed To Read Exception is raised when MXReflection can't access an argument value
  */
 public class AccessNotAllowedToReadException extends RuntimeException{
 

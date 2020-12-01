@@ -1,22 +1,22 @@
 # MXReflection  
 A Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
 
-You can calculate complex mathematical operations and functions with Java, just by using class related fields, MXReflection reads values from the assigned fields and injects the results in the `@MXFormula` annotated fields.
+You can calculate complex mathematical operations and functions with Java, just by using class related fields, MXReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
 
- - With `@Variable`  value we can assign customized argument names to be used in the target function.
- - `@MXFormula` annotation value contains the function expression with the arguments.
+ - With `@Arg`  value we can assign customized argument names to be used in the target function.
+ - `@Expression` annotation value contains the function expression with the arguments.
 
 First example:
 
     class Example1 {
     
-        @Variable("f1")
+        @Arg("f1")
         String field1;
     
-        @Variable("f2")
+        @Arg("f2")
         int field2;
     
-        @MXFormula("")
+        @Expression("")
         double field3;
     
     }
@@ -74,7 +74,7 @@ Supported result field java types:
  - String
  - BigInteger
 
- **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommanded to be sure that the formula returns and integer type.**
+ **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommanded to be sure that the expression returns an integer type.**
   
 ## Result reuse
 
@@ -83,27 +83,27 @@ With MXReflection, you can use function results as arguments for other results:
 Second example:
 
      public class Example2{          
-         @Variable("f1")  
+         @Arg("f1")  
          public String field1;          
      
-         @Variable("f2")  
+         @Arg("f2")  
          public int field2;          
      
-         @MXFormula("f1 - f2")  
+         @Expression("f1 - f2")  
          public String field3;          
      
-         @MXFormula("f1 * f2")  
+         @Expression("f1 * f2")  
          public double field5;          
      
-         @MXFormula("sin(field5)")  
+         @Expression("sin(field5)")  
          public Double field6;          
      
-         @MXFormula("field5 - field6")  
+         @Expression("field5 - field6")  
          public long field9;  
     }
 
   
 
-MXReflection resolves a graph of dependencies between results and variables, it makes sure that there is no cycle in the field dependency. 
+MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency. 
 
 ## Installation

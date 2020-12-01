@@ -1,6 +1,6 @@
 package com.ismail.mxreflection.beans;
 
-import com.ismail.mxreflection.annotations.MXFormula;
+import com.ismail.mxreflection.annotations.Expression;
 
 public class BeanTestNullFieldValue {
 
@@ -8,6 +8,6 @@ public class BeanTestNullFieldValue {
 
     public Double field2;
 
-    @MXFormula("field1 + field2")
+    @Expression("field1 + field2")
     public Double field3;
 }

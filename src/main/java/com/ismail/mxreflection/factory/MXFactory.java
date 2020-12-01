@@ -1,8 +1,8 @@
 package com.ismail.mxreflection.factory;
 
-import com.ismail.mxreflection.annotations.MXFormula;
+import com.ismail.mxreflection.annotations.Expression;
 import com.ismail.mxreflection.core.impl.MXCalculator;
-import com.ismail.mxreflection.exceptions.NoFormulaFoundForTypeException;
+import com.ismail.mxreflection.exceptions.NoExpressionFoundForTypeException;
 import com.ismail.mxreflection.models.FieldOrder;
 import com.ismail.mxreflection.models.MXFunction;
 import com.ismail.mxreflection.utilities.ReflectionUtility;
@@ -27,10 +27,10 @@ public class MXFactory {
      */
     public static <T> MXCalculator<T> createCalculator(Class<T> clazz) {
 
-        Map<String, MXFunction> annotatedFields = getAnnotatedMXFormulaFieldsAndValuesMap(clazz);
+        Map<String, MXFunction> annotatedFields = getAnnotatedExpressionFieldsAndValuesMap(clazz);
 
         if (!checkAnnotatedFields(annotatedFields))
-            throw new NoFormulaFoundForTypeException(clazz.getName());
+            throw new NoExpressionFoundForTypeException(clazz.getName());
 
         FieldOrder fieldOrder = new FieldOrder(annotatedFields, clazz);
 
@@ -41,10 +41,10 @@ public class MXFactory {
         return annotatedFields != null && !annotatedFields.isEmpty();
     }
 
-    private static Map<String, MXFunction> getAnnotatedMXFormulaFieldsAndValuesMap(Class clazz) {
+    private static Map<String, MXFunction> getAnnotatedExpressionFieldsAndValuesMap(Class clazz) {
 
-        return ReflectionUtility.getClassFields(clazz).stream().filter(f -> f.getAnnotation(MXFormula.class) != null)
-                .map(f -> new MXFunction(f, clazz)).collect(Collectors.toMap(MXFunction::getVariableName, f -> f));
+        return ReflectionUtility.getClassFields(clazz).stream().filter(f -> f.getAnnotation(Expression.class) != null)
+                .map(f -> new MXFunction(f, clazz)).collect(Collectors.toMap(MXFunction::getArgumentName, f -> f));
     }
 
 }

@@ -6,16 +6,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The Variable annotation to customize the field name to be used with MXFormula annotation
+ * The Arg annotation to customize the field name to be used with Expression annotation
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Variable {
+public @interface Arg {
 
     /**
-     * The variable name to be use with MXFormula annotation, one this value is set it should be used in the function instead of the field name
+     * The argument name to be use with Expression annotation, one this value is set it should be used in the function instead of the field name
      *
-     * @return The variable name
+     * @return The argument name
      */
     String value() default "";
 }

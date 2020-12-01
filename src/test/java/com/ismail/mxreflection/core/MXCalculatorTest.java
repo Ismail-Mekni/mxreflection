@@ -143,11 +143,11 @@ public class MXCalculatorTest {
     }
 
     @Test
-    public void calculateWithPrivateVariablesTest(){
+    public void calculateWithPrivateArgumentsTest(){
 
-        Calculator<BeanTestPrivateVariable> calculator = MXFactory.createCalculator(BeanTestPrivateVariable.class);
+        Calculator<BeanTestPrivateArgument> calculator = MXFactory.createCalculator(BeanTestPrivateArgument.class);
 
-        BeanTestPrivateVariable beanTest = new BeanTestPrivateVariable(5, 6);
+        BeanTestPrivateArgument beanTest = new BeanTestPrivateArgument(5, 6);
 
         calculator.calculate(beanTest);
 
@@ -157,10 +157,10 @@ public class MXCalculatorTest {
     }
 
     @Test
-    public void calculateWithPrivateFieldAsResultFormulaTest(){
-        Calculator<BeanTestPrivateFormula> calculator = MXFactory.createCalculator(BeanTestPrivateFormula.class);
+    public void calculateWithPrivateFieldAsResultExpressionTest(){
+        Calculator<BeanTestPrivateExpression> calculator = MXFactory.createCalculator(BeanTestPrivateExpression.class);
 
-        BeanTestPrivateFormula beanTest = new BeanTestPrivateFormula(5, 6);
+        BeanTestPrivateExpression beanTest = new BeanTestPrivateExpression(5, 6);
 
         calculator.calculate(beanTest);
 

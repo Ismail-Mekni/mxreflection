@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Unparseable Field Exception is raised when a given variable field value is not numeric
+ * Unparseable Field Exception is raised when a given argument field value is not numeric
  */
 public class UnparseableFieldException extends RuntimeException {
 

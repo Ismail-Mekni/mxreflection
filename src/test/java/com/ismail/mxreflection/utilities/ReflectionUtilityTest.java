@@ -4,7 +4,7 @@ import com.ismail.mxreflection.beans.BeanTest;
 import com.ismail.mxreflection.beans.BeanTestDuplicateName;
 import com.ismail.mxreflection.beans.BeanTestParserWrite;
 import com.ismail.mxreflection.exceptions.AccessNotAllowedToWriteValueException;
-import com.ismail.mxreflection.exceptions.DuplicatedVariableNameException;
+import com.ismail.mxreflection.exceptions.DuplicatedArgumentNameException;
 import com.ismail.mxreflection.exceptions.FieldWithNameNotFoundException;
 import org.junit.Test;
 
@@ -42,29 +42,29 @@ public class ReflectionUtilityTest {
         assertTrue(fieldNames.contains("field5"));
     }
 
-    @Test(expected = DuplicatedVariableNameException.class)
-    public void getClassFieldNamesDuplicatedVariableNameExceptionTest(){
+    @Test(expected = DuplicatedArgumentNameException.class)
+    public void getClassFieldNamesDuplicatedArgumentNameExceptionTest(){
 
         ReflectionUtility.getClassFieldNames(BeanTestDuplicateName.class);
     }
 
     @Test
-    public void getFieldNameWithoutVariableAnnotationTest() throws NoSuchFieldException {
+    public void getFieldNameWithoutArgAnnotationTest() throws NoSuchFieldException {
 
-        String fieldName = ReflectionUtility.getVariableName(BeanTest.class.getDeclaredField("field5"));
+        String fieldName = ReflectionUtility.getArgumentName(BeanTest.class.getDeclaredField("field5"));
         assertEquals("field5", fieldName);
 
     }
 
     @Test
-    public void getFieldNameWithVariableAnnotationFieldTest() throws NoSuchFieldException {
+    public void getFieldNameWithArgAnnotationFieldTest() throws NoSuchFieldException {
 
-        String annotatedFieldName = ReflectionUtility.getVariableName(BeanTest.class.getField("field1"));
+        String annotatedFieldName = ReflectionUtility.getArgumentName(BeanTest.class.getField("field1"));
         assertEquals("f1", annotatedFieldName);
     }
 
     @Test
-    public void getFieldValueWithoutVariableAnnotationTest() throws IllegalAccessException {
+    public void getFieldValueWithoutArgAnnotationTest() throws IllegalAccessException {
         BeanTest beanTest = new BeanTest();
         beanTest.setField5("5.258");
         beanTest.setField4(3.5);
@@ -77,7 +77,7 @@ public class ReflectionUtilityTest {
     }
 
     @Test
-    public void getFieldValueWithVariableAnnotationTest() throws IllegalAccessException {
+    public void getFieldValueWithArgAnnotationTest() throws IllegalAccessException {
         BeanTestParserWrite beanTest = new BeanTestParserWrite();
         beanTest.field1 = "5.258";
         beanTest.field2 = 3;

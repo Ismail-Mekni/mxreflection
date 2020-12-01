@@ -2,10 +2,10 @@ package com.ismail.mxreflection.factory;
 
 import com.ismail.mxreflection.beans.*;
 import com.ismail.mxreflection.core.impl.MXCalculator;
-import com.ismail.mxreflection.exceptions.CycleFormulaDependencyException;
-import com.ismail.mxreflection.exceptions.DuplicatedVariableNameException;
-import com.ismail.mxreflection.exceptions.FormulaIsNotValidException;
-import com.ismail.mxreflection.exceptions.NoFormulaFoundForTypeException;
+import com.ismail.mxreflection.exceptions.CycleExpressionDependencyException;
+import com.ismail.mxreflection.exceptions.DuplicatedArgumentNameException;
+import com.ismail.mxreflection.exceptions.NotValidExpressionException;
+import com.ismail.mxreflection.exceptions.NoExpressionFoundForTypeException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -13,30 +13,30 @@ import static org.junit.Assert.assertNotNull;
 public class MXReflectionFactoryTest {
 
     @Test
-    public void createFormulaCalculatorTest() {
+    public void createExpressionCalculatorTest() {
         MXCalculator calculator = MXFactory.createCalculator(BeanTest.class);
 
         assertNotNull(calculator);
     }
 
-    @Test(expected = NoFormulaFoundForTypeException.class)
-    public void throwNoFormulaFoundExceptionWhenCreatingFormulaFactoryTest() {
-        MXFactory.createCalculator(BeanTestWithoutFormula.class);
+    @Test(expected = NoExpressionFoundForTypeException.class)
+    public void throwNoExpressionFoundExceptionWhenCreatingExpressionFactoryTest() {
+        MXFactory.createCalculator(BeanTestWithoutExpression.class);
 
     }
 
-    @Test(expected = FormulaIsNotValidException.class)
-    public void throwFormulaIsNotValidExceptionForFieldTest() {
-        MXFactory.createCalculator(BeanTestInvalidFormula.class);
+    @Test(expected = NotValidExpressionException.class)
+    public void throwExpressionIsNotValidExceptionForFieldTest() {
+        MXFactory.createCalculator(BeanTestInvalidExpression.class);
     }
 
-    @Test(expected = CycleFormulaDependencyException.class)
-    public void throwCycleFormulaDependencyException() {
+    @Test(expected = CycleExpressionDependencyException.class)
+    public void throwCycleExpressionDependencyException() {
         MXFactory.createCalculator(BeanTestCycleDependency.class);
     }
 
-    @Test(expected = DuplicatedVariableNameException.class)
-    public void throwDuplicatedVariableNameTest(){
+    @Test(expected = DuplicatedArgumentNameException.class)
+    public void throwDuplicatedArgumentNameTest(){
         MXFactory.createCalculator(BeanTestDuplicateName.class);
     }
 

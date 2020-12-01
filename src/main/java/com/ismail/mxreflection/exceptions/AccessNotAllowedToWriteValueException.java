@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Access Not Allowed To Write Exception is raised when MXReflection can't access MXFormula annotated field
+ * Access Not Allowed To Write Exception is raised when MXReflection can't access Expression annotated field
  * to set the result value
  */
 public class AccessNotAllowedToWriteValueException extends RuntimeException {

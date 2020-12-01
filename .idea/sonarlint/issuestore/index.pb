@@ -55,3 +55,9 @@ j
 [src/main/java/com/ismail/mxreflection/exceptions/AccessNotAllowedToWriteValueException.java,4\d\4de171efb7c325944841c0439048372de604cac3
 v
 Fsrc/main/java/com/ismail/mxreflection/utilities/ReflectionUtility.java,0\5\050355a0cf3822f915ebb2ac0ac9281e98458dfa
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+v
+Fsrc/test/java/com/ismail/mxreflection/beans/BeanTestAnnotationMix.java,0\6\069c8c33899a14ea91bb74c36ed9aef930e8ee96
+p
+@src/test/java/com/ismail/mxreflection/core/MXCalculatorTest.java,0\f\0fd346ded61cffba1922d893d1e098569bc8b119

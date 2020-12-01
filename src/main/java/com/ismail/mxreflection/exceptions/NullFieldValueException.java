@@ -1,7 +1,7 @@
 package com.ismail.mxreflection.exceptions;
 
 /**
- * Null Field Value Exception is raised when a given variable field is null
+ * Null Field Value Exception is raised when a given argument field is null
  */
 public class NullFieldValueException extends RuntimeException {
 

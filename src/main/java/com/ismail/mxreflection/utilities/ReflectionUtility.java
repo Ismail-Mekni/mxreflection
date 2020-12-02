@@ -8,6 +8,7 @@ import com.ismail.mxreflection.exceptions.FieldWithNameNotFoundException;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -60,9 +61,10 @@ public class ReflectionUtility {
     private static Field getFieldByArgument(String var, Class clazz) {
 
         try {
+
             return Arrays.stream(clazz.getDeclaredFields())
-                    .filter(f -> f.getAnnotation(Arg.class).value().equals(var)).findFirst().get();
-        } catch (NullPointerException e) {
+                    .filter(f -> f.isAnnotationPresent(Arg.class) && f.getAnnotation(Arg.class).value().equals(var)).findFirst().get();
+        } catch (NoSuchElementException e) {
             throw new FieldWithNameNotFoundException(var);
         }
     }

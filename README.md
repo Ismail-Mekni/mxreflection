@@ -16,12 +16,13 @@ First example:
         @Arg("f2")
         int field2;
     
-        @Expression("")
+        @Expression("f1 * sin(f2) * log2(f1 + f2) + der(cos(f1), f1) * pi + int(tan(f2), f2, 0, e)")
         double field3;
     
     }
     
-    public static void main(String[] args) {
+    @Test
+    public void ExampleTest() {
         
         Example1 example1 = new Example1();
         example1.field1 = "2.2";
@@ -34,7 +35,7 @@ First example:
 
 The result:
 
-    Field 3 result: 
+    Field 3 result: -34.32819235851987 
 
 ## Supported math collection
 
@@ -82,7 +83,7 @@ With MXReflection, you can use function results as arguments for other results:
 
 Second example:
 
-     public class Example2{          
+     class Example2{          
          @Arg("f1")  
          public String field1;          
      
@@ -102,7 +103,26 @@ Second example:
          public long field9;  
     }
 
-  
+    @Test
+    public void ExampleTest() {
+        Example2 example2 = new Example2();
+        example2.field1 = "2.2";
+        example2.field2 = 5;
+
+        Calculator<Example2> calculator = MXFactory.createCalculator(Example2.class);
+        calculator.calculate(example2);
+        System.out.println("Field 3 result: " + example2.field3);
+        System.out.println("Field 4 result: " + example2.field4);
+        System.out.println("Field 5 result: " + example2.field5);
+        System.out.println("Field 6 result: " + example2.field6);
+    }
+
+The result:
+
+    Field 3 result: -2.8
+    Field 4 result: -0.7369739303429912
+    Field 5 result: -2.258697069696864
+    Field 6 result: -6
 
 MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency. 
 

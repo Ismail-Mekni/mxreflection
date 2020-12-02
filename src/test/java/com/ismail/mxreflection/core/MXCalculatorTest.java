@@ -201,4 +201,19 @@ public class MXCalculatorTest {
 
     }
 
+    @Test
+    public void calculateOneArgNonAnnotatedField() {
+        BeanTestWithFieldDependency beanTest = new BeanTestWithFieldDependency();
+        beanTest.field1 = "2.2";
+        beanTest.field2 = 5;
+
+        Calculator<BeanTestWithFieldDependency> calculator = MXFactory.createCalculator(BeanTestWithFieldDependency.class);
+        calculator.calculate(beanTest);
+
+        assertEquals("-2.8", beanTest.field3);
+        assertEquals(-0.736, beanTest.field4, 0.01);
+        assertEquals(-2.258, beanTest.field5, 0.01);
+        assertEquals(-6, beanTest.field6);
+    }
+
 }

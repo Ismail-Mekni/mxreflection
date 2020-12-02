@@ -33,7 +33,7 @@ First example:
         System.out.println("Field 3 result: " + example1.field3);
     }
 
-The result:
+Output:
 
     Field 3 result: -34.32819235851987 
 
@@ -83,24 +83,24 @@ With MXReflection, you can use function results as arguments for other results:
 
 Second example:
 
-     class Example2{          
+     public class Example2{          
          @Arg("f1")  
-         public String field1;          
+         private String field1;          
      
          @Arg("f2")  
-         public int field2;          
+         private int field2;          
      
          @Expression("f1 - f2")  
-         public String field3;          
+         private String field3;          
      
          @Expression("f1 * f2")  
-         public double field5;          
+         private double field5;          
      
          @Expression("sin(field5)")  
-         public Double field6;          
+         private Double field6;          
      
          @Expression("field5 - field6")  
-         public long field9;  
+         private long field9;  
     }
 
     @Test
@@ -117,7 +117,7 @@ Second example:
         System.out.println("Field 6 result: " + example2.field6);
     }
 
-The result:
+Output:
 
     Field 3 result: -2.8
     Field 4 result: -0.7369739303429912

@@ -1,9 +1,9 @@
 # MXReflection  
 A Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
 
-You can calculate complex mathematical operations and functions with Java, just by using class related fields, MXReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
+You can calculate complex mathematical operations and functions with Java, just by using class-related fields, MXReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
 
- - With `@Arg`  value we can assign customized argument names to be used in the target function.
+ - With `@Arg`  value, we can assign customized argument names to be used in the target function.
  - `@Expression` annotation value contains the function expression with the arguments.
 
 First example:
@@ -62,7 +62,7 @@ MXReflection supports all the [math collection](http://mathparser.org/mxparser-m
 ## MXReflection parsing
 ### Argument parsing
 
-MXReflection supports all field data types with numeric content as argument. You can use all java types with `toString` implementations that returns numeric results.
+MXReflection supports all field data types with numeric content as an argument. You can use all java types with `toString` implementations that return numeric results.
 
 ### Result parsing
 
@@ -75,7 +75,7 @@ Supported result field java types:
  - String
  - BigInteger
 
- **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommanded to be sure that the expression returns an integer type.**
+ **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommended to be sure that the expression returns an integer type.**
   
 ## Result reuse
 

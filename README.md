@@ -41,23 +41,23 @@ Output:
 
 MXReflection supports all the [math collection](http://mathparser.org/mxparser-math-collection/) available in mXparser math library:
 
- - [Operators](http://mathparser.org/mxparser-math-collection/operators/) (+, -, *, /, #, !, ^)
+- [Operators](http://mathparser.org/mxparser-math-collection/operators/) (+, -, *, /, #, !, ^)
 - [Binary Relations](http://mathparser.org/mxparser-math-collection/binary-relations/) (=, ==, =<, =>, <, >, <>, !=, ~=)
 - [Boolean Operators](http://mathparser.org/mxparser-math-collection/boolean-operators/) (&, &&, /\, ~&, ~&&, ~/\, |, ||, \/, ~|, ~||, ~\/, (+), -->, <--, -/>, </-, <->, ~)
 - [Bitwise Operators](http://mathparser.org/mxparser-math-collection/bitwise-operators/) (@~, @&, @^, @|, @<<, @>>)
-- [Unary Functions](http://mathparser.org/mxparser-math-collection/unary-functions/)
+- [Unary Functions](http://mathparser.org/mxparser-math-collection/unary-functions/) (sin, cos, tan, tg, ctan, ctg, cot, sec, cosec, csc, asin, arsin, arcsin, acos, arcos, arccos, atan, arctan, atg, arctg, actan, arcctan, actg, arcctg, acot, arccot, ln, log2, log10, rad, exp, sqrt, sinh, cosh, tanh, tgh, ctanh, coth, ctgh, sech, csch, cosech, deg, abs, sgn, floor, ceil, not, asinh, arsinh, arcsinh, acosh, arcosh, arccosh, atanh, arctanh, atgh, arctgh, actanh, arcctanh, acoth, arcoth, arccoth, actgh, arcctgh, asech, arsech, arcsech, acsch, arcsch, arccsch, acosech, arcosech, arccosech, sinc, Sa, Sinc, Bell, Luc, Fib, harm, ispr, Pi, Ei, li, Li, erf, erfc, erfInv, erfcInv, ulp)
 - [Binary Functions](http://mathparser.org/mxparser-math-collection/binary-functions/) (log, mod, C, Bern, Stirl1, Stirl2, Worp, Euler, KDelta, EulerPol, Harm, rUni, rUnid, round, rNor)
 - [3-args Functions](http://mathparser.org/mxparser-math-collection/3-args-functions/) (if, chi, CHi, Chi, cHi, pUni, cUni, qUni, pNor, cNor, qNor)
 - [Variadic Functions](http://mathparser.org/mxparser-math-collection/variadic-functions/) (iff, min, max, ConFrac, ConPol, gcd, lcm, add, multi, mean, var, std, rList)
 - [Iterated Operators](http://mathparser.org/mxparser-math-collection/iterated-operators/) (sum, prod, avg, vari, stdi, mini, maxi)
 - [Calculus Operators](http://mathparser.org/mxparser-math-collection/calculus-operators/) (int, der, der-, der+, dern, diff, difb)
-- [Math Constants](http://mathparser.org/mxparser-math-collection/constants/)
+- [Math Constants](http://mathparser.org/mxparser-math-collection/constants/) (pi, e, [gam], [phi], [PN], [B*], [F'd], [F'a], [C2], [M1], [B2], [B4], [BN'L], [Kat], [K*], [K.], [B'L], [RS'm], [EB'e], [Bern], [GKW'l], [HSM's], [lm], [Cah], [Ll], [AG], [L*], [L.], [Dz3], [A3n], [Bh], [Pt], [L2], [Nv], [Ks], [Kh], [FR], [La], [P2], [Om], [MRB], [li2], [EG])
 - [Physical Constants](http://mathparser.org/mxparser-math-collection/physical-constants/) ([c], [G.], [g], [hP], [h-], [lP], [mP], [tP])
-- [Astronomical Constants](http://mathparser.org/mxparser-math-collection/astronomical-constants/)
-- [Random Variables](http://mathparser.org/mxparser-math-collection/random-variables/)
+- [Astronomical Constants](http://mathparser.org/mxparser-math-collection/astronomical-constants/) ([ly], [au], [pc], [kpc], [Earth-R-eq], [Earth-R-po], [Earth-R], [Earth-M], [Earth-D], [Moon-R], [Moon-M], [Moon-D], [Solar-R], [Solar-M], [Mercury-R], [Mercury-M], [Mercury-D], [Venus-R], [Venus-M], [Venus-D], [Mars-R], [Mars-M], [Mars-D], [Jupiter-R], [Jupiter-M], [Jupiter-D], [Saturn-R], [Saturn-M], [Saturn-D], [Uranus-R], [Uranus-M], [Uranus-D], [Neptune-R], [Neptune-M], [Neptune-D])
+- [Random Variables](http://mathparser.org/mxparser-math-collection/random-variables/) ([Uni], [Int], [Int1], [Int2], [Int3], [Int4], [Int5], [Int6], [Int7], [Int8], [Int9], [nat], [nat1], [nat2], [nat3], [nat4], [nat5], [nat6], [nat7], [nat8], [nat9], [Nat], [Nat1], [Nat2], [Nat3], [Nat4], [Nat5], [Nat6], [Nat7], [Nat8], [Nat9], [Nor])
 - [Metric prefixes](http://mathparser.org/mxparser-math-collection/metric-prefixes/) ([%], [%%], [Y], [sept], [Z], [sext], [E], [quint], [P], [quad], [T], [tril], [G], [bil], [M], [mil], [k], [th], [hecto], [hund], [deca], [ten], [deci], [centi], [milli], [mic], [n], [p], [f], [a], [z], [y])
-- [Units](http://mathparser.org/mxparser-math-collection/units/)
 - [Parser Symbols](http://mathparser.org/mxparser-math-collection/parser-symbols/) ((, ), ,, ;)
+- [Units](http://mathparser.org/mxparser-math-collection/units/)
 
 ## MXReflection parsing
 ### Argument parsing

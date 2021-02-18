@@ -128,10 +128,14 @@ MXReflection resolves a graph of dependencies between functions and arguments, i
 
 ## Installation
 
+### Maven
+
+### Gradle
+
 ## PiTest report
 
 [PIT](https://pitest.org/) is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. It's fast, scalable and integrates with modern test and build tooling.
 
-Below is the PIT report summary of the project, the full report could be found under **PIT/report**:
+Below is the PIT report summary of the project, you could get the full report under `${PROJECT_DIR}/build/reports/pitest` by running `gradle pitest`:
 
 ![alt text](./Docs/pitest_report.png)

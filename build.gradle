@@ -1,4 +1,4 @@
-buildscript{
+buildscript {
     repositories {
         mavenCentral()
     }
@@ -17,7 +17,6 @@ apply plugin: 'info.solidsoft.pitest'
 pitest {
     targetClasses = ['com.ismail.mxreflection.*']
     timestampedReports = false
-    reportDir = 'PIT/report'
 }
 
 group 'com.ismail'
@@ -34,4 +33,10 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     compile 'org.mariuszgromada.math:MathParser.org-mXparser:4.4.2'
     compile group: 'org.jgrapht', name: 'jgrapht-core', version: '1.4.0'
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

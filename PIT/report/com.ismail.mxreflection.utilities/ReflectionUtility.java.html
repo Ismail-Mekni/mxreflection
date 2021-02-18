@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ReflectionUtility.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.ismail.mxreflection.utilities;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.ismail.mxreflection.annotations.Arg;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.ismail.mxreflection.exceptions.AccessNotAllowedToWriteValueException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.ismail.mxreflection.exceptions.DuplicatedArgumentNameException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.ismail.mxreflection.exceptions.FieldWithNameNotFoundException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.lang.reflect.Field;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Arrays;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.NoSuchElementException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Set;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.stream.Collectors;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class ReflectionUtility {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    private ReflectionUtility() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static List&#60;Field&#62; getClassFields(Class clazz) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_21'>1</a>
+<span>
+
+1. getClassFields : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getClassFields to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return Arrays.asList(clazz.getDeclaredFields());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static Set&#60;String&#62; getClassFieldNames(Class clazz) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Set&#60;String&#62; fieldNames = Arrays.stream(clazz.getDeclaredFields())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_26'>2</a>
+<span>
+
+1. lambda$getClassFieldNames$0 : negated conditional &rarr; KILLED<br/>
+
+2. lambda$getClassFieldNames$0 : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::lambda$getClassFieldNames$0 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .map(field -&#62; field.getAnnotation(Arg.class) != null ? field.getAnnotation(Arg.class).value() : field.getName())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .collect(Collectors.toSet());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_28'/>
+28
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_28'>1</a>
+<span>
+
+1. getClassFieldNames : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (fieldNames.size() != clazz.getDeclaredFields().length)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new DuplicatedArgumentNameException(clazz.getName());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_30'>1</a>
+<span>
+
+1. getClassFieldNames : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getClassFieldNames to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        else return fieldNames;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static String getArgumentName(Field field) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_34'>2</a>
+<span>
+
+1. getArgumentName : negated conditional &rarr; KILLED<br/>
+
+2. getArgumentName : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getArgumentName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return field.getAnnotation(Arg.class) != null ? field.getAnnotation(Arg.class).value() : field.getName();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static String getFieldName(Field field) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_38'>1</a>
+<span>
+
+1. getFieldName : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return field.getName();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static Object getFieldValue(String fieldName, Object object) throws IllegalAccessException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Class objectClass = object.getClass();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_45'>1</a>
+<span>
+
+1. getFieldValue : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldValue to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return getValueFromField(object.getClass().getDeclaredField(fieldName), object);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (NoSuchFieldException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_47'/>
+47
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_47'>1</a>
+<span>
+
+1. getFieldValue : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldValue to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return getValueFromField(getFieldByArgument(fieldName, objectClass), object);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static void setValueToField(Object object, String fieldName, Object value) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Field field = object.getClass().getDeclaredField(fieldName);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_54'>1</a>
+<span>
+
+1. setValueToField : removed call to java/lang/reflect/Field::setAccessible &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            field.setAccessible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_55'>1</a>
+<span>
+
+1. setValueToField : removed call to java/lang/reflect/Field::set &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            field.set(object, value);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (NoSuchFieldException | IllegalAccessException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new AccessNotAllowedToWriteValueException(fieldName);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Field getFieldByArgument(String var, Class clazz) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_65'>1</a>
+<span>
+
+1. getFieldByArgument : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldByArgument to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return Arrays.stream(clazz.getDeclaredFields())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_66'/>
+66
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_66'>3</a>
+<span>
+
+1. lambda$getFieldByArgument$1 : negated conditional &rarr; KILLED<br/>
+
+2. lambda$getFieldByArgument$1 : negated conditional &rarr; KILLED<br/>
+
+3. lambda$getFieldByArgument$1 : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    .filter(f -&#62; f.isAnnotationPresent(Arg.class) &#38;&#38; f.getAnnotation(Arg.class).value().equals(var)).findFirst().get();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (NoSuchElementException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new FieldWithNameNotFoundException(var);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Object getValueFromField(Field field, Object object) throws IllegalAccessException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_73'/>
+73
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_73'>1</a>
+<span>
+
+1. getValueFromField : removed call to java/lang/reflect/Field::setAccessible &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        field.setAccessible(true);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_74'/>
+74
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_74'>1</a>
+<span>
+
+1. getValueFromField : mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getValueFromField to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return field.get(object);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@366ac49b_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getClassFields<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldsTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getClassFields to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$getClassFieldNames$0<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$getClassFieldNames$0<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::lambda$getClassFieldNames$0 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_28'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getClassFieldNames<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getClassFieldNames<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getClassFieldNames to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getArgumentName<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldNameWithArgAnnotationFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getArgumentName<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldNameWithArgAnnotationFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getArgumentName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFieldName<br/><b>Killed by : </b>com.ismail.mxreflection.core.MXCalculatorTest.calculateInitializerTest(com.ismail.mxreflection.core.MXCalculatorTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFieldValue<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithoutArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldValue to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_47'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFieldValue<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldValue to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setValueToField<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.setValueToPrivateFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> removed call to java/lang/reflect/Field::setAccessible &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setValueToField<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.setValueToPrivateFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> removed call to java/lang/reflect/Field::set &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFieldByArgument<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getFieldByArgument to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_66'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$getFieldByArgument$1<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$getFieldByArgument$1<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$getFieldByArgument$1<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_73'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getValueFromField<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithoutArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> removed call to java/lang/reflect/Field::setAccessible &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@366ac49b_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@366ac49b_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getValueFromField<br/><b>Killed by : </b>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithoutArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest)</span></span> mutated return of Object value for com/ismail/mxreflection/utilities/ReflectionUtility::getValueFromField to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.ismail.mxreflection.core.MXCalculatorTest.calculateWithAnnotationMix(com.ismail.mxreflection.core.MXCalculatorTest) (24 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldsTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (2 ms)</li><li>com.ismail.mxreflection.factory.MXReflectionFactoryTest.throwDuplicatedArgumentNameTest(com.ismail.mxreflection.factory.MXReflectionFactoryTest) (1 ms)</li><li>com.ismail.mxreflection.factory.MXReflectionFactoryTest.throwExpressionIsNotValidExceptionForFieldTest(com.ismail.mxreflection.factory.MXReflectionFactoryTest) (6 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldNameWithoutArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (3 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (2 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateWithPrivateArgumentsTest(com.ismail.mxreflection.core.MXCalculatorTest) (15 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (1 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateBeanWithWriteParserTest(com.ismail.mxreflection.core.MXCalculatorTest) (136 ms)</li><li>com.ismail.mxreflection.factory.MXReflectionFactoryTest.throwNoExpressionFoundExceptionWhenCreatingExpressionFactoryTest(com.ismail.mxreflection.factory.MXReflectionFactoryTest) (3 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateThrowUparseableFieldExceptionTest(com.ismail.mxreflection.core.MXCalculatorTest) (19 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueTestNoSuchFieldException(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (1 ms)</li><li>com.ismail.mxreflection.factory.MXReflectionFactoryTest.throwCycleExpressionDependencyException(com.ismail.mxreflection.factory.MXReflectionFactoryTest) (11 ms)</li><li>com.ismail.mxreflection.factory.MXReflectionFactoryTest.createExpressionCalculatorTest(com.ismail.mxreflection.factory.MXReflectionFactoryTest) (36 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateInitializerTest(com.ismail.mxreflection.core.MXCalculatorTest) (14 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateThrowUnparseableResultExceptionTest(com.ismail.mxreflection.core.MXCalculatorTest) (35 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateOneArgNonAnnotatedField(com.ismail.mxreflection.core.MXCalculatorTest) (133 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateBeanWithReadParserTest(com.ismail.mxreflection.core.MXCalculatorTest) (247 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.setValueToFieldUnknownFieldNameTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (1 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateWithPrivateFieldAsResultExpressionTest(com.ismail.mxreflection.core.MXCalculatorTest) (31 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateThrowNullPointerExceptionTest(com.ismail.mxreflection.core.MXCalculatorTest) (8 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldValueWithoutArgAnnotationTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (0 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getFieldNameWithArgAnnotationFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (2 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateSimpleBeanWithPublicAndDoubleFieldsTest(com.ismail.mxreflection.core.MXCalculatorTest) (65 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.setValueToPrivateFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (1 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateCollections(com.ismail.mxreflection.core.MXCalculatorTest) (77 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.setValueToPublicFieldTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (12 ms)</li><li>com.ismail.mxreflection.core.MXCalculatorTest.calculateStringUnparseableFieldExceptionTest(com.ismail.mxreflection.core.MXCalculatorTest) (21 ms)</li><li>com.ismail.mxreflection.utilities.ReflectionUtilityTest.getClassFieldNamesDuplicatedArgumentNameExceptionTest(com.ismail.mxreflection.utilities.ReflectionUtilityTest) (5 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.4.3
+
+</body>
+</html>

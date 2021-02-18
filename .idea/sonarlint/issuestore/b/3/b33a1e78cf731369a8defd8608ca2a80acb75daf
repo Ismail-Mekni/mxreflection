@@ -1,5 +1,5 @@
 
-?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-Usquid:UnusedPrivateMethod8"1Remove this unused private "toBigInteger" method.(êÄò
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(ãòÙÂøÿÿÿÿ
 dsquid:S1192"HDefine a constant instead of duplicating this literal "valueOf" 3 times.(Èê‰‘ÿÿÿÿÿ
+Usquid:UnusedPrivateMethod8"1Remove this unused private "toBigInteger" method.(êÄò
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(ãòÙÂøÿÿÿÿ

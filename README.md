@@ -127,3 +127,11 @@ Output:
 MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency. 
 
 ## Installation
+
+## PiTest report
+
+[PIT](https://pitest.org/) is a state of the art mutation testing system, providing gold standard test coverage for Java and the jvm. It's fast, scalable and integrates with modern test and build tooling.
+
+Below is the PIT report summary of the project, the full report could be found under **PIT/report**:
+
+![alt text](./Docs/pitest_report.png)

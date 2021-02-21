@@ -130,7 +130,17 @@ MXReflection resolves a graph of dependencies between functions and arguments, i
 
 ### Maven
 
+    <dependency>
+        <groupId>com.github.ismail-mekni</groupId>
+        <artifactId>mxreflection</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
 ### Gradle
+
+    dependencies {
+        compile group: 'com.github.ismail-mekni', name: 'mxreflection', version: '1.0.0'
+    }
 
 ## PiTest report
 

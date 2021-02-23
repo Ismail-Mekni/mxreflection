@@ -119,7 +119,7 @@ Second example:
     public void exampleTest() {
         Example2 example2 = new Example2();
         example2.field1 = "2.2";
-        example2.field2 = 5;
+        example2.field2 = 5L;
 
         Calculator<Example2> calculator = MXFactory.createCalculator(Example2.class);
         calculator.calculate(example2);

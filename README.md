@@ -127,8 +127,8 @@ Second example:
         System.out.println("Field 4 result: " + example2.field4);
         System.out.println("Field 5 result: " + example2.field5);
         System.out.println("Field 6 result: " + example2.field6);
-        System.out.println("Field 6 result: " + example2.field7);
-        System.out.println("Field 6 result: " + example2.field8);
+        System.out.println("Field 7 result: " + example2.field7);
+        System.out.println("Field 8 result: " + example2.field8);
     }
 
 Output:

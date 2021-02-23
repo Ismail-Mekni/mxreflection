@@ -7,6 +7,8 @@ import com.ismail.mxreflection.exceptions.UnparseableFieldException;
 import com.ismail.mxreflection.exceptions.UnparseableResultException;
 import com.ismail.mxreflection.factory.MXFactory;
 import org.junit.Test;
+import org.mariuszgromada.math.mxparser.Expression;
+import org.mariuszgromada.math.mxparser.Function;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -212,7 +214,7 @@ public class MXCalculatorTest {
 
         assertEquals("-2.8", beanTest.field3);
         assertEquals(-0.736, beanTest.field4, 0.01);
-        assertEquals(-2.258, beanTest.field5, 0.01);
+        assertEquals(-1.697, beanTest.field5, 0.01);
         assertEquals(-6, beanTest.field6);
     }
 

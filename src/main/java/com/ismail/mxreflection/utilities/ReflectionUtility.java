@@ -27,7 +27,8 @@ public class ReflectionUtility {
                 .collect(Collectors.toSet());
         if (fieldNames.size() != clazz.getDeclaredFields().length)
             throw new DuplicatedArgumentNameException(clazz.getName());
-        else return fieldNames;
+
+        return fieldNames;
     }
 
     public static String getArgumentName(Field field) {

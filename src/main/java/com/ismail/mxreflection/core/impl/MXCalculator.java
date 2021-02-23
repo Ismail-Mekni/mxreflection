@@ -30,7 +30,7 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     /**
-     *{@inheritDoc}
+     * {@inheritDoc}
      */
     @Override
     public void calculate(T object) {
@@ -38,10 +38,10 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     /**
-     *{@inheritDoc}
+     * {@inheritDoc}
      */
     @Override
-    public void calculate(Collection<T> objects){
+    public void calculate(Collection<T> objects) {
         objects.forEach(this::calculate);
     }
 
@@ -55,10 +55,10 @@ public class MXCalculator<T> implements Calculator<T> {
     private Object readValueFromObjectField(String field, Object object) {
         try {
             Object val = ReflectionUtility.getFieldValue(field, object);
-            if (val != null)
-                return val;
-            else
+            if (val == null)
                 throw new NullFieldValueException(field);
+
+            return val;
 
         } catch (IllegalAccessException e) {
             throw new AccessNotAllowedToReadException(field);
@@ -66,7 +66,7 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     private void writeValueToObjectField(String field, Object object, Double value) {
-            ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
+        ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
     }
 
     private List<Double> getArgumentValues(Set<String> vars, Object object) {

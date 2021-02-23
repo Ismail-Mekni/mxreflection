@@ -22,7 +22,7 @@ First example:
     }
     
     @Test
-    public void ExampleTest() {
+    public void exampleTest() {
         
         Example1 example1 = new Example1();
         example1.field1 = "2.2";
@@ -83,28 +83,40 @@ With MXReflection, you can use function results as arguments for other results:
 
 Second example:
 
-     public class Example2{          
-         @Arg("f1")  
-         private String field1;          
-     
-         @Arg("f2")  
-         private int field2;          
-     
-         @Expression("f1 - f2")  
-         private String field3;          
-     
-         @Expression("f1 * f2")  
-         private double field5;          
-     
-         @Expression("sin(field5)")  
-         private Double field6;          
-     
-         @Expression("field5 - field6")  
-         private long field9;  
+    public class Example2{      
+         
+        @Arg("f1")
+        private String field1;
+
+        @Arg("f2")
+        private Long field2;
+
+        @Expression("f2 - f1")
+        @Arg("f3")
+        private double field3;
+
+        @Expression("f3 - f2")
+        @Arg("f4")
+        private double field4;
+
+        @Expression("f1 - f2")
+        @Arg("f5")
+        private Double field5;
+
+        @Expression("f4-f5")
+        @Arg("f6")
+        private String field6;
+
+        @Expression("f6-f5")
+        @Arg("f7")
+        private long field7;
+
+        @Expression("f7+5")
+        private Long field8;  
     }
 
     @Test
-    public void ExampleTest() {
+    public void exampleTest() {
         Example2 example2 = new Example2();
         example2.field1 = "2.2";
         example2.field2 = 5;
@@ -115,14 +127,18 @@ Second example:
         System.out.println("Field 4 result: " + example2.field4);
         System.out.println("Field 5 result: " + example2.field5);
         System.out.println("Field 6 result: " + example2.field6);
+        System.out.println("Field 6 result: " + example2.field7);
+        System.out.println("Field 6 result: " + example2.field8);
     }
 
 Output:
 
-    Field 3 result: -2.8
-    Field 4 result: -0.7369739303429912
-    Field 5 result: -2.258697069696864
-    Field 6 result: -6
+    Field 3 result: 2.8
+    Field 4 result: -2.2
+    Field 5 result: -2.8
+    Field 6 result: 0.6
+    Field 7 result: 3
+    Field 8 result: 8                    
 
 MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency. 
 

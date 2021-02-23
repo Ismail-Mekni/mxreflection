@@ -19,8 +19,9 @@ pitest {
     timestampedReports = false
 }
 
-group 'com.ismail'
-version '1.0.0'
+group 'com.github.ismail-mekni'
+archivesBaseName = 'mxreflection'
+version '1.0.1'
 
 sourceCompatibility = 1.8
 

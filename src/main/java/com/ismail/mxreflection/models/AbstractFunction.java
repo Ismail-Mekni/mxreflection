@@ -1,6 +1,6 @@
 package com.ismail.mxreflection.models;
 
-import com.ismail.mxreflection.utilities.ReflectionUtility;
+import com.ismail.mxreflection.core.ReflectionBean;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -20,8 +20,8 @@ public abstract class AbstractFunction<T> {
 
     protected java.util.function.Function<List<Double>, Double> lambda;
 
-    protected Set<String> extractArguments(String expression, Class clazz) {
-        return ReflectionUtility.getClassFieldNames(clazz).stream().filter(expression::contains).collect(Collectors.toSet());
+    protected Set<String> extractArguments(String expression, ReflectionBean reflectionBean) {
+        return reflectionBean.getClassFieldNames().stream().filter(expression::contains).collect(Collectors.toSet());
     }
 
     protected abstract T generateFunction(Set<String> arguments, Field field);

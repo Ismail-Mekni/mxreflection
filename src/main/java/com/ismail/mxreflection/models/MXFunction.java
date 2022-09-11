@@ -2,7 +2,7 @@ package com.ismail.mxreflection.models;
 
 import com.ismail.mxreflection.annotations.Expression;
 import com.ismail.mxreflection.exceptions.NotValidExpressionException;
-import com.ismail.mxreflection.utilities.ReflectionUtility;
+import com.ismail.mxreflection.core.ReflectionBean;
 import org.mariuszgromada.math.mxparser.Function;
 
 import java.lang.reflect.Field;
@@ -20,12 +20,11 @@ public class MXFunction extends AbstractFunction<Function> {
 
     private static final String FUNCTION_ARGUMENTS_DELIMITER = ", ";
 
-    public MXFunction(Field field, Class clazz) {
-        this.fieldName = ReflectionUtility.getFieldName(field);
-
-        this.argumentName = ReflectionUtility.getArgumentName(field);
+    public MXFunction(Field field, ReflectionBean reflectionBean) {
+        this.fieldName = reflectionBean.getFieldName(field);
+        this.argumentName = reflectionBean.getArgumentName(field);
         String expression = field.getAnnotation(Expression.class).value();
-        this.arguments = extractArguments(expression, clazz);
+        this.arguments = extractArguments(expression, reflectionBean);
         this.function = generateFunction(arguments, field);
         generatePredicate();
     }

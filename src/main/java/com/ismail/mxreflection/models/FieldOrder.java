@@ -2,7 +2,7 @@ package com.ismail.mxreflection.models;
 
 import com.ismail.mxreflection.exceptions.CycleExpressionDependencyException;
 import com.ismail.mxreflection.utilities.GraphUtility;
-import com.ismail.mxreflection.utilities.ReflectionUtility;
+import com.ismail.mxreflection.core.ReflectionBean;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
@@ -14,19 +14,20 @@ public class FieldOrder <T extends AbstractFunction> {
 
     private Queue<T> orderedFields;
 
-    public FieldOrder(Map<String, T> fieldMap, Class clazz){
-        this.orderedFields = sortFieldsByExpressionDependency(fieldMap, clazz);
+    public FieldOrder(Map<String, T> fieldMap, ReflectionBean reflectionBean){
+        this.orderedFields = sortFieldsByExpressionDependency(fieldMap, reflectionBean);
     }
 
-    private Queue<T> sortFieldsByExpressionDependency(Map<String, T> fields, Class clazz) {
+    private Queue<T> sortFieldsByExpressionDependency(Map<String, T> fields, ReflectionBean reflectionBean) {
         Graph<String, DefaultEdge> fieldRelationshipGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
 
-        ReflectionUtility.getClassFields(clazz).forEach(field -> fieldRelationshipGraph.addVertex(ReflectionUtility.getArgumentName(field)));
+        reflectionBean.getFields()
+                .forEach(field -> fieldRelationshipGraph.addVertex(reflectionBean.getArgumentName(field)));
 
         fields.values().forEach(field -> addGraphEdges(fieldRelationshipGraph, field));
 
         if(GraphUtility.checkGraphCycle(fieldRelationshipGraph))
-            throw new CycleExpressionDependencyException(clazz.getName());
+            throw new CycleExpressionDependencyException(reflectionBean.getClazz().getName());
 
         return sortFields(fieldRelationshipGraph, fields);
     }

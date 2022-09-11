@@ -2,12 +2,11 @@ package com.ismail.mxreflection.core.impl;
 
 import com.ismail.mxreflection.core.Calculator;
 import com.ismail.mxreflection.exceptions.AccessNotAllowedToReadException;
-import com.ismail.mxreflection.exceptions.AccessNotAllowedToWriteValueException;
 import com.ismail.mxreflection.exceptions.NullFieldValueException;
 import com.ismail.mxreflection.models.FieldOrder;
 import com.ismail.mxreflection.models.MXFunction;
 import com.ismail.mxreflection.parsers.Parser;
-import com.ismail.mxreflection.utilities.ReflectionUtility;
+import com.ismail.mxreflection.core.ReflectionBean;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,8 +20,11 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private FieldOrder<MXFunction> fieldOrder;
 
-    public MXCalculator(FieldOrder<MXFunction> fieldOrder) {
+    private ReflectionBean reflectionBean;
+
+    public MXCalculator(FieldOrder<MXFunction> fieldOrder, ReflectionBean reflectionBean) {
         this.fieldOrder = fieldOrder;
+        this.reflectionBean = reflectionBean;
     }
 
     public FieldOrder<MXFunction> getFieldOrder() {
@@ -54,7 +56,7 @@ public class MXCalculator<T> implements Calculator<T> {
 
     private Object readValueFromObjectField(String field, Object object) {
         try {
-            Object val = ReflectionUtility.getFieldValue(field, object);
+            Object val = reflectionBean.getFieldValue(field, object);
             if (val == null)
                 throw new NullFieldValueException(field);
 
@@ -66,19 +68,15 @@ public class MXCalculator<T> implements Calculator<T> {
     }
 
     private void writeValueToObjectField(String field, Object object, Double value) {
-        ReflectionUtility.setValueToField(object, field, parseValue(field, object, value));
+        reflectionBean.setValueToField(object, field, parseValue(field, value));
     }
 
     private List<Double> getArgumentValues(Set<String> vars, Object object) {
-        return Parser.parseArguments(vars.stream().filter(f -> ReflectionUtility.getClassFieldNames(object.getClass()).contains(f))
+        return Parser.parseArguments(vars.stream().filter(f -> reflectionBean.getClassFieldNames().contains(f))
                 .map(f -> readValueFromObjectField(f, object)).collect(Collectors.toList()));
     }
 
-    private Object parseValue(String field, Object object, Double value) {
-        try {
-            return Parser.parseResult(value, object.getClass().getDeclaredField(field).getType());
-        } catch (NoSuchFieldException e) {
-            throw new AccessNotAllowedToWriteValueException(field);
-        }
+    private Object parseValue(String field, Double value) {
+        return Parser.parseResult(value, reflectionBean.getFieldTypeByName(field));
     }
 }

@@ -25,4 +25,4 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Pitest
-      run: ./gradle pitest
+      run: ./gradlew pitest

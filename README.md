@@ -1,4 +1,17 @@
 # MXReflection  
+
+* [What is MxReflection?](#what-is-mxreflection)
+* [Installation](#installation)
+    * [Maven](#maven)
+    * [Gradle](#gradle)
+* [Supported math collection](#supported-math-collection)
+* [MxReflection parsing](#mxreflection-parsing)
+    * [Argument parsing](#argument-parsing)
+    * [Result parsing](#result-parsing)
+* [Result reuse](#result-reuse)
+* [PiTest report](#pitest-report)
+
+## What is MxReflection?
 A Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
 
 You can calculate complex mathematical operations and functions with Java, just by using class-related fields, MXReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
@@ -36,6 +49,22 @@ First example:
 Output:
 
     Field 3 result: -34.32819235851987 
+
+## Installation
+
+### Maven
+
+    <dependency>
+        <groupId>com.github.ismail-mekni</groupId>
+        <artifactId>mxreflection</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+
+### Gradle
+
+    dependencies {
+        compile group: 'com.github.ismail-mekni', name: 'mxreflection', version: '1.0.1'
+    }
 
 ## Supported math collection
 
@@ -140,23 +169,7 @@ Output:
     Field 7 result: 3
     Field 8 result: 8                    
 
-MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency. 
-
-## Installation
-
-### Maven
-
-    <dependency>
-        <groupId>com.github.ismail-mekni</groupId>
-        <artifactId>mxreflection</artifactId>
-        <version>1.0.1</version>
-    </dependency>
-
-### Gradle
-
-    dependencies {
-        compile group: 'com.github.ismail-mekni', name: 'mxreflection', version: '1.0.1'
-    }
+MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency.
 
 ## PiTest report
 

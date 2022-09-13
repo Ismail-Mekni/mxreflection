@@ -2,7 +2,7 @@ package com.ismailmekni.mxreflection.beans.inheritance;
 
 import com.ismailmekni.mxreflection.annotations.Arg;
 
-public class BeanTestParent {
+public class ParentTestBean {
 
     @Arg("f1")
     private double field1;

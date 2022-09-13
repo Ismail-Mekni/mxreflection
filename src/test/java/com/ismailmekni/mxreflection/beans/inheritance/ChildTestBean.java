@@ -3,7 +3,7 @@ package com.ismailmekni.mxreflection.beans.inheritance;
 import com.ismailmekni.mxreflection.annotations.Arg;
 import com.ismailmekni.mxreflection.annotations.Expression;
 
-public class BeanTestChild extends BeanTestParent{
+public class ChildTestBean extends ParentTestBean {
 
     @Arg("f2")
     private double field2;

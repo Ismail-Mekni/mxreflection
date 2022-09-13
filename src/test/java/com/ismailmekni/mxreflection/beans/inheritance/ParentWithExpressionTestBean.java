@@ -2,7 +2,7 @@ package com.ismailmekni.mxreflection.beans.inheritance;
 
 import com.ismailmekni.mxreflection.annotations.Expression;
 
-public class BeanTestParentWithExpression {
+public class ParentWithExpressionTestBean {
 
     @Expression("f1 - f2")
     private double field3;

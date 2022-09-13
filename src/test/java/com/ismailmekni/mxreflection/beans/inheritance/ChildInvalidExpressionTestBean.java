@@ -1,6 +1,6 @@
 package com.ismailmekni.mxreflection.beans.inheritance;
 
-public class BeanTestChildInvalidExpression extends BeanTestParentInvalidExpression{
+public class ChildInvalidExpressionTestBean extends ParentInvalidExpressionTestBean {
 
     public int field1;
 

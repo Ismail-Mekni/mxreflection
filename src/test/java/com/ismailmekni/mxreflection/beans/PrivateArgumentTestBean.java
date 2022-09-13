@@ -3,7 +3,7 @@ package com.ismailmekni.mxreflection.beans;
 import com.ismailmekni.mxreflection.annotations.Expression;
 import com.ismailmekni.mxreflection.annotations.Arg;
 
-public class PrivateArgumentBeanTest {
+public class PrivateArgumentTestBean {
 
 
     @Arg("f1")
@@ -12,7 +12,7 @@ public class PrivateArgumentBeanTest {
     @Arg("f2")
     private double field2;
 
-    public PrivateArgumentBeanTest(double field1, double field2) {
+    public PrivateArgumentTestBean(double field1, double field2) {
         this.field1 = field1;
         this.field2 = field2;
     }

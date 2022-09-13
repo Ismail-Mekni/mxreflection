@@ -146,9 +146,9 @@ public class MXCalculatorTest {
     @Test
     public void calculateWithPrivateArgumentsTest(){
 
-        Calculator<PrivateArgumentBeanTest> calculator = MXFactory.createCalculator(PrivateArgumentBeanTest.class);
+        Calculator<PrivateArgumentTestBean> calculator = MXFactory.createCalculator(PrivateArgumentTestBean.class);
 
-        PrivateArgumentBeanTest beanTest = new PrivateArgumentBeanTest(5, 6);
+        PrivateArgumentTestBean beanTest = new PrivateArgumentTestBean(5, 6);
 
         calculator.calculate(beanTest);
 

@@ -36,7 +36,7 @@ public class MXFactory {
 
         FieldOrder fieldOrder = new FieldOrder(annotatedFields, reflectionBean);
 
-        return new MXCalculator<T>(fieldOrder, reflectionBean);
+        return new MXCalculator<>(fieldOrder, reflectionBean);
     }
 
     private static boolean checkAnnotatedFields(Map annotatedFields) {

@@ -37,14 +37,14 @@ public class FieldOrder <T extends AbstractFunction> {
         if(fieldGraph.vertexSet().isEmpty())
             return new LinkedList<>();
 
-        Queue<T> orderedFields = GraphUtility.getVerticesWithoutSuccessors(fieldGraph).stream().filter(fields::containsKey)
+        Queue<T> sortedFields = GraphUtility.getVerticesWithoutSuccessors(fieldGraph).stream().filter(fields::containsKey)
                 .map(fields::get).collect(Collectors.toCollection(LinkedList::new));
 
         GraphUtility.removeVerticesWithoutSuccessors(fieldGraph);
 
-        orderedFields.addAll(sortFields(fieldGraph, fields));
+        sortedFields.addAll(sortFields(fieldGraph, fields));
 
-        return orderedFields;
+        return sortedFields;
     }
 
     private void addGraphEdges(Graph<String, DefaultEdge> graph, T field) {

@@ -64,9 +64,13 @@ public class ReflectionBean {
     private Field getFieldByArgument(String arg) {
 
         try {
-            return this.fields.stream()
+            Optional<Field> fieldWithArgument= this.fields.stream()
                     .filter(f -> f.isAnnotationPresent(Arg.class) && f.getAnnotation(Arg.class).value().equals(arg))
-                    .findFirst().get();
+                    .findFirst();
+            if(!fieldWithArgument.isPresent()) {
+                throw new FieldWithNameNotFoundException(arg);
+            }
+            return fieldWithArgument.get();
         } catch (NoSuchElementException e) {
             throw new FieldWithNameNotFoundException(arg);
         }

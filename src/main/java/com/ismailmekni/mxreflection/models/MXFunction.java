@@ -47,7 +47,7 @@ public class MXFunction extends AbstractFunction<Function> {
     protected void generatePredicate() {
         this.lambda = (List<Double> arguments) -> {
 
-            List<String> values = arguments.stream().map(var -> var.toString()).collect(Collectors.toList());
+            List<String> values = arguments.stream().map(Object::toString).collect(Collectors.toList());
 
             String argsExpression = FUNCTION_SIGNATURE_PREFIX + String.join(FUNCTION_ARGUMENTS_DELIMITER, values) + EXPRESSION_ARGUMENTS_POSTFIX;
             org.mariuszgromada.math.mxparser.Expression expression = new org.mariuszgromada.math.mxparser.Expression(argsExpression, this.function);

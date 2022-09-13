@@ -11,18 +11,22 @@ import java.util.stream.Collectors;
 
 public class Parser {
 
+    private Parser() {
+    }
+
     private static Map<Class, Method> parsingMethodMap;
 
     static {
         parsingMethodMap = new HashMap<>();
+        final String objectValueOfMethodName = "valueOf";
         try {
 
-            parsingMethodMap.put(Double.class, Double.class.getDeclaredMethod("valueOf", double.class));
-            parsingMethodMap.put(Long.class, Math.class.getDeclaredMethod("round", double.class));
-            parsingMethodMap.put(String.class, String.class.getDeclaredMethod("valueOf", double.class));
+            parsingMethodMap.put(Double.class, Double.class.getDeclaredMethod(objectValueOfMethodName, double.class));
+            parsingMethodMap.put(String.class, String.class.getDeclaredMethod(objectValueOfMethodName, double.class));
+            parsingMethodMap.put(double.class, Double.class.getDeclaredMethod(objectValueOfMethodName, double.class));
             parsingMethodMap.put(BigInteger.class, Parser.class.getDeclaredMethod("toBigInteger", double.class));
+            parsingMethodMap.put(Long.class, Math.class.getDeclaredMethod("round", double.class));
             parsingMethodMap.put(long.class, Math.class.getDeclaredMethod("round", double.class));
-            parsingMethodMap.put(double.class, Double.class.getDeclaredMethod("valueOf", double.class));
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -30,19 +34,19 @@ public class Parser {
 
     }
 
-    public static List<Double> parseArguments(List<Object> vars) {
-        return vars.stream().map(var -> {
+    public static List<Double> parseArguments(List<Object> args) {
+        return args.stream().map(arg -> {
             try {
-                return Double.parseDouble(String.valueOf(var));
+                return Double.parseDouble(String.valueOf(arg));
             } catch (Exception exception) {
-                throw new UnparseableFieldException(var.getClass().getName());
+                throw new UnparseableFieldException(arg.getClass().getName());
             }
         }).collect(Collectors.toList());
     }
 
     public static <T> T parseResult(double result, Class<T> type) {
         try {
-                return (T) parseToType(result, (Class<? extends Number>) type);
+            return (T) parseToType(result, (Class<? extends Number>) type);
 
         } catch (Exception e) {
             throw new UnparseableResultException(type.getName());

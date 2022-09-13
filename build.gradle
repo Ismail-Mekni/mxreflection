@@ -15,7 +15,7 @@ plugins {
 apply plugin: 'info.solidsoft.pitest'
 
 pitest {
-    targetClasses = ['com.ismail.mxreflection.*']
+    targetClasses = ['com.ismailmekni.mxreflection.*']
     timestampedReports = false
 }
 

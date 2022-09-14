@@ -5,7 +5,7 @@ import com.ismailmekni.mxreflection.annotations.Arg;
 public class ParentTestBean {
 
     @Arg("f1")
-    private double field1;
+    private Double field1;
 
     public double getField1() {
         return field1;

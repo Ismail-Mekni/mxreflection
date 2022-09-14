@@ -3,7 +3,9 @@ package com.ismailmekni.mxreflection.inheritance;
 import com.ismailmekni.mxreflection.beans.inheritance.*;
 import com.ismailmekni.mxreflection.core.Calculator;
 import com.ismailmekni.mxreflection.exceptions.NotValidExpressionException;
+import com.ismailmekni.mxreflection.exceptions.NullFieldValueException;
 import com.ismailmekni.mxreflection.exceptions.UnparseableFieldException;
+import com.ismailmekni.mxreflection.exceptions.UnparseableResultException;
 import com.ismailmekni.mxreflection.factory.MXFactory;
 import org.junit.Test;
 
@@ -67,6 +69,16 @@ public class MxCalculatorWithInheritanceTest {
         assertEquals("11.0", beanMix.field8);
     }
 
+    @Test(expected = NullFieldValueException.class)
+    public void calculateThrowExpressionWhenContainsNullInheritedArgumentFieldTest() {
+        ChildTestBean childTestBean = new ChildTestBean();
+        childTestBean.setField2(2);
+
+        Calculator<ChildTestBean> calculator = MXFactory.createCalculator(ChildTestBean.class);
+
+        calculator.calculate(childTestBean);
+    }
+
     @Test(expected = UnparseableFieldException.class)
     public void calculateThrowUparseableFieldExceptionTest() {
         Calculator<ChildUnparseableFieldTestBean> calculator = MXFactory.createCalculator(ChildUnparseableFieldTestBean.class);
@@ -78,5 +90,19 @@ public class MxCalculatorWithInheritanceTest {
         beanTest.field2 = 6;
 
         calculator.calculate(beanTest);
+    }
+
+    @Test(expected = UnparseableResultException.class)
+    public void calculateThrowUnparseableResultExceptionTest() {
+        Calculator<ChildUnparseableResultTestBean> calculator = MXFactory.createCalculator(ChildUnparseableResultTestBean.class);
+
+        ChildUnparseableResultTestBean unparseableResult = new ChildUnparseableResultTestBean();
+
+
+        unparseableResult.field1 = "5";
+
+        unparseableResult.field2 = "6";
+
+        calculator.calculate(unparseableResult);
     }
 }

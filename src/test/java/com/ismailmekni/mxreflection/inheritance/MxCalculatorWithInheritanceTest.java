@@ -1,12 +1,13 @@
 package com.ismailmekni.mxreflection.inheritance;
 
-import com.ismailmekni.mxreflection.beans.inheritance.ChildTestBean;
-import com.ismailmekni.mxreflection.beans.inheritance.ChildInvalidExpressionTestBean;
-import com.ismailmekni.mxreflection.beans.inheritance.BeanTestChildWithoutExpression;
+import com.ismailmekni.mxreflection.beans.inheritance.*;
 import com.ismailmekni.mxreflection.core.Calculator;
 import com.ismailmekni.mxreflection.exceptions.NotValidExpressionException;
+import com.ismailmekni.mxreflection.exceptions.UnparseableFieldException;
 import com.ismailmekni.mxreflection.factory.MXFactory;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -45,5 +46,37 @@ public class MxCalculatorWithInheritanceTest {
     @Test(expected = NotValidExpressionException.class)
     public void throwExpressionIsNotValidExceptionForFieldTest() {
         MXFactory.createCalculator(ChildInvalidExpressionTestBean.class);
+    }
+
+    @Test
+    public void calculateWithAnnotationMix() {
+        Calculator<ChildAnnotationMixAndDependencyTestBean> calculatorMix = MXFactory.createCalculator(ChildAnnotationMixAndDependencyTestBean.class);
+
+        ChildAnnotationMixAndDependencyTestBean beanMix = new ChildAnnotationMixAndDependencyTestBean();
+
+        beanMix.field1="5";
+        beanMix.field2="3";
+        beanMix.field5 = "6";
+        beanMix.field6 = "7";
+
+        calculatorMix.calculate(beanMix);
+
+        assertEquals("19.0", beanMix.field3);
+        assertEquals("24.0", beanMix.field4);
+        assertEquals("30.0", beanMix.field7);
+        assertEquals("11.0", beanMix.field8);
+    }
+
+    @Test(expected = UnparseableFieldException.class)
+    public void calculateThrowUparseableFieldExceptionTest() {
+        Calculator<ChildUnparseableFieldTestBean> calculator = MXFactory.createCalculator(ChildUnparseableFieldTestBean.class);
+
+        ChildUnparseableFieldTestBean beanTest = new ChildUnparseableFieldTestBean();
+
+        beanTest.field1 = new HashMap();
+
+        beanTest.field2 = 6;
+
+        calculator.calculate(beanTest);
     }
 }

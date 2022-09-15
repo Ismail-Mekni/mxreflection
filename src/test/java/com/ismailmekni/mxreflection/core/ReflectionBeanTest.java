@@ -3,7 +3,7 @@ package com.ismailmekni.mxreflection.core;
 import com.ismailmekni.mxreflection.beans.TestBean;
 import com.ismailmekni.mxreflection.beans.DuplicateNameTestBean;
 import com.ismailmekni.mxreflection.beans.ParserWriteTestBean;
-import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameException;
+import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameOrInnerClassDetectedException;
 import com.ismailmekni.mxreflection.exceptions.FieldWithNameNotFoundException;
 import org.junit.Test;
 
@@ -46,7 +46,7 @@ public class ReflectionBeanTest {
         assertTrue(fieldNames.contains("field5"));
     }
 
-    @Test(expected = DuplicatedArgumentNameException.class)
+    @Test(expected = DuplicatedArgumentNameOrInnerClassDetectedException.class)
     public void getClassFieldNamesDuplicatedArgumentNameExceptionTest(){
 
         ReflectionBean reflectionBean = new ReflectionBean(DuplicateNameTestBean.class);

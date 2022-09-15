@@ -2,7 +2,7 @@ package com.ismailmekni.mxreflection.core;
 
 import com.ismailmekni.mxreflection.annotations.Arg;
 import com.ismailmekni.mxreflection.exceptions.AccessNotAllowedToWriteValueException;
-import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameException;
+import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameOrInnerClassDetectedException;
 import com.ismailmekni.mxreflection.exceptions.FieldWithNameNotFoundException;
 import com.ismailmekni.mxreflection.utilities.ReflectionUtility;
 
@@ -27,7 +27,7 @@ public class ReflectionBean {
                 .collect(Collectors.toSet());
 
         if (fieldNames.size() != this.fields.size())
-            throw new DuplicatedArgumentNameException(this.clazz.getName());
+            throw new DuplicatedArgumentNameOrInnerClassDetectedException(this.clazz.getName());
 
         return fieldNames;
     }

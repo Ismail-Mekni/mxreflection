@@ -1,4 +1,4 @@
-# MXReflection  
+# MxReflection  
 
 * [What is MxReflection?](#what-is-mxreflection)
 * [Installation](#installation)
@@ -9,12 +9,13 @@
     * [Argument parsing](#argument-parsing)
     * [Result parsing](#result-parsing)
 * [Result reuse](#result-reuse)
+* [MxReflection and inheritance](#mxreflection-and-inheritance)
 * [PiTest report](#pitest-report)
 
 ## What is MxReflection?
-A Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
+MxReflection is a Java math framework based on [mXparser library](http://mathparser.org/) capabilities. 
 
-You can calculate complex mathematical operations and functions with Java, just by using class-related fields, MXReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
+You can calculate complex mathematical operations and functions with Java, just by using class-related fields, MxReflection reads values from the assigned fields and injects the results in the `@Expression` annotated fields.
 
  - With `@Arg`  value, we can assign customized argument names to be used in the target function.
  - `@Expression` annotation value contains the function expression with the arguments.
@@ -55,20 +56,20 @@ Output:
 ### Maven
 
     <dependency>
-        <groupId>com.github.ismail-mekni</groupId>
+        <groupId>com.ismailmekni</groupId>
         <artifactId>mxreflection</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
     </dependency>
 
 ### Gradle
 
     dependencies {
-        compile group: 'com.github.ismail-mekni', name: 'mxreflection', version: '1.0.1'
+        compile group: 'com.ismailmekni', name: 'mxreflection', version: '1.1.0'
     }
 
 ## Supported math collection
 
-MXReflection supports all the [math collection](http://mathparser.org/mxparser-math-collection/) available in mXparser math library:
+MxReflection supports all the [math collection](http://mathparser.org/mxparser-math-collection/) available in mXparser math library:
 
 - [Operators](http://mathparser.org/mxparser-math-collection/operators/) (+, -, *, /, #, !, ^)
 - [Binary Relations](http://mathparser.org/mxparser-math-collection/binary-relations/) (=, ==, =<, =>, <, >, <>, !=, ~=)
@@ -88,10 +89,10 @@ MXReflection supports all the [math collection](http://mathparser.org/mxparser-m
 - [Parser Symbols](http://mathparser.org/mxparser-math-collection/parser-symbols/) ((, ), ,, ;)
 - [Units](http://mathparser.org/mxparser-math-collection/units/)
 
-## MXReflection parsing
+## MxReflection parsing
 ### Argument parsing
 
-MXReflection supports all field data types with numeric content as an argument. You can use all java types with `toString` implementations that return numeric results.
+MxReflection supports all field data types with numeric content as an argument. You can use all java types with `toString` implementations that return numeric results.
 
 ### Result parsing
 
@@ -104,11 +105,11 @@ Supported result field java types:
  - String
  - BigInteger
 
- **Note that for long, Long, and BigInteger, MXReflection uses `Math.round` to parse the final result before injecting it. It is recommended to be sure that the expression returns an integer type.**
+ **Note that for long, Long, and BigInteger, MxReflection uses `Math.round` to parse the final result before injecting it. It is recommended to be sure that the expression returns an integer type.**
   
 ## Result reuse
 
-With MXReflection, you can use function results as arguments for other results:    
+With MxReflection, you can use function results as arguments for other results:    
 
 Second example:
 
@@ -169,7 +170,61 @@ Output:
     Field 7 result: 3
     Field 8 result: 8                    
 
-MXReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency.
+MxReflection resolves a graph of dependencies between functions and arguments, it makes sure that there is no cycle in the field dependency.
+
+## MxReflection and inheritance
+
+Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object. With MxReflection you can write expressions on the parent class fields and use it as arguments. Also, it is possible to have dependencies between parent and child classes field expressions.
+
+**Note: To generate the calculator with the factory the child class type should be the argument.**
+
+Example:
+
+    class Parent {
+    
+        @Arg("f1")
+        String field1;
+    
+        @Arg("f2")
+        int field2;
+    
+        @Expression("f1 + f4 * f2")
+        @Arg("f3")
+        double field3;
+    }
+    
+    class Child extends Parent {
+    
+        @Arg("f4")
+        String field4;
+    
+        @Arg("f5")
+        int field5;
+    
+        @Expression("f5 * f3")
+        double field6;
+    }
+
+    @Test
+    public void inheritanceExampleTest() {
+        Child child = new Child();
+        child.field1 = "2.2";
+        child.field2 = 5;
+        child.field4 = "6";
+        child.field5 = 3;
+
+        Calculator<Child> calculator = MXFactory.createCalculator(Child.class);
+        calculator.calculate(child);
+
+        System.out.println("Field 3 result: " + child.field3);
+        System.out.println("Field 6 result: " + child.field6);
+    }
+
+
+Output:
+
+    Field 3 result: 32.2
+    Field 6 result: 96.6
 
 ## PiTest report
 

@@ -4,7 +4,7 @@ import com.ismailmekni.mxreflection.beans.*;
 import com.ismailmekni.mxreflection.beans.inheritance.ChildCyclicDependencyTestBean;
 import com.ismailmekni.mxreflection.core.impl.MXCalculator;
 import com.ismailmekni.mxreflection.exceptions.CycleExpressionDependencyException;
-import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameException;
+import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameOrInnerClassDetectedException;
 import com.ismailmekni.mxreflection.exceptions.NotValidExpressionException;
 import com.ismailmekni.mxreflection.exceptions.NoExpressionFoundForTypeException;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class MXReflectionFactoryTest {
         MXFactory.createCalculator(CyclicDependencyTestBean.class);
     }
 
-    @Test(expected = DuplicatedArgumentNameException.class)
+    @Test(expected = DuplicatedArgumentNameOrInnerClassDetectedException.class)
     public void throwDuplicatedArgumentNameTest(){
         MXFactory.createCalculator(DuplicateNameTestBean.class);
     }

@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.9.2'
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     compile 'org.mariuszgromada.math:MathParser.org-mXparser:4.4.2'
     compile group: 'org.jgrapht', name: 'jgrapht-core', version: '1.4.0'

@@ -2,13 +2,14 @@ package com.ismailmekni.mxreflection.parsers;
 
 import com.ismailmekni.mxreflection.exceptions.UnparseableFieldException;
 import com.ismailmekni.mxreflection.exceptions.UnparseableResultException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ParserTest {
 
@@ -42,13 +43,17 @@ public class ParserTest {
         assertEquals(String.valueOf(Double.MAX_VALUE), Parser.parseResult(Double.MAX_VALUE, String.class));
     }
 
-    @Test(expected = UnparseableFieldException.class)
+    @Test
     public void parseArgumentsUnparseableFieldExceptionTest() {
-        Parser.parseArguments(Arrays.asList("hello", 2.9));
+        assertThrows(UnparseableFieldException.class, () -> {
+            Parser.parseArguments(Arrays.asList("hello", 2.9));
+        });
     }
 
-    @Test(expected = UnparseableResultException.class)
+    @Test
     public void parseResultUnparseableResultExceptionTest() {
-        Parser.parseResult(2.8, int.class);
+        assertThrows(UnparseableResultException.class, () -> {
+            Parser.parseResult(2.8, int.class);
+        });
     }
 }

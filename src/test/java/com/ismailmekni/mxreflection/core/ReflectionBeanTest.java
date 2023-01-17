@@ -5,19 +5,18 @@ import com.ismailmekni.mxreflection.beans.DuplicateNameTestBean;
 import com.ismailmekni.mxreflection.beans.ParserWriteTestBean;
 import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameOrInnerClassDetectedException;
 import com.ismailmekni.mxreflection.exceptions.FieldWithNameNotFoundException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ReflectionBeanTest {
 
     @Test
-    public void getClassFieldsTest(){
+    public void getClassFieldsTest() {
 
         ReflectionBean reflectionBean = new ReflectionBean(TestBean.class);
 
@@ -32,7 +31,7 @@ public class ReflectionBeanTest {
     }
 
     @Test
-    public void getClassFieldNamesTest(){
+    public void getClassFieldNamesTest() {
 
         ReflectionBean reflectionBean = new ReflectionBean(TestBean.class);
 
@@ -46,11 +45,14 @@ public class ReflectionBeanTest {
         assertTrue(fieldNames.contains("field5"));
     }
 
-    @Test(expected = DuplicatedArgumentNameOrInnerClassDetectedException.class)
-    public void getClassFieldNamesDuplicatedArgumentNameExceptionTest(){
+    @Test
+    public void getClassFieldNamesDuplicatedArgumentNameExceptionTest() {
 
-        ReflectionBean reflectionBean = new ReflectionBean(DuplicateNameTestBean.class);
-        reflectionBean.getClassFieldNames();
+        assertThrows(DuplicatedArgumentNameOrInnerClassDetectedException.class, () -> {
+
+            ReflectionBean reflectionBean = new ReflectionBean(DuplicateNameTestBean.class);
+            reflectionBean.getClassFieldNames();
+        });
 
     }
 
@@ -102,17 +104,19 @@ public class ReflectionBeanTest {
 
     }
 
-    @Test(expected = FieldWithNameNotFoundException.class)
-    public void getFieldValueTestNoSuchFieldException() throws IllegalAccessException {
+    @Test
+    public void getFieldValueTestNoSuchFieldException() {
         ReflectionBean reflectionBean = new ReflectionBean(ParserWriteTestBean.class);
 
         ParserWriteTestBean beanTest = new ParserWriteTestBean();
 
-        reflectionBean.getFieldValue("hello", beanTest);
+        assertThrows(FieldWithNameNotFoundException.class, ()-> {
+            reflectionBean.getFieldValue("hello", beanTest);
+        });
     }
 
     @Test
-    public void setValueToPublicFieldTest(){
+    public void setValueToPublicFieldTest() {
 
         ReflectionBean reflectionBean = new ReflectionBean(TestBean.class);
 
@@ -124,7 +128,7 @@ public class ReflectionBeanTest {
     }
 
     @Test
-    public void setValueToPrivateFieldTest(){
+    public void setValueToPrivateFieldTest() {
         ReflectionBean reflectionBean = new ReflectionBean(TestBean.class);
 
         TestBean testBean = new TestBean();
@@ -134,12 +138,14 @@ public class ReflectionBeanTest {
         assertEquals("3.5", testBean.getField5());
     }
 
-    @Test(expected = FieldWithNameNotFoundException.class)
-    public void setValueToFieldUnknownFieldNameTest(){
+    @Test
+    public void setValueToFieldUnknownFieldNameTest() {
         ReflectionBean reflectionBean = new ReflectionBean(TestBean.class);
 
         TestBean testBean = new TestBean();
 
-        reflectionBean.setValueToField(testBean, "hello", "3.0");
+        assertThrows(FieldWithNameNotFoundException.class, ()-> {
+            reflectionBean.setValueToField(testBean, "hello", "3.0");
+        });
     }
 }

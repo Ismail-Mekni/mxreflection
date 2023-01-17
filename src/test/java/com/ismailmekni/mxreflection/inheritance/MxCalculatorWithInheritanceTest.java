@@ -7,11 +7,11 @@ import com.ismailmekni.mxreflection.exceptions.NullFieldValueException;
 import com.ismailmekni.mxreflection.exceptions.UnparseableFieldException;
 import com.ismailmekni.mxreflection.exceptions.UnparseableResultException;
 import com.ismailmekni.mxreflection.factory.MXFactory;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class MxCalculatorWithInheritanceTest {
@@ -31,7 +31,7 @@ public class MxCalculatorWithInheritanceTest {
     }
 
     @Test
-    public void calculateExpressionInParentClassTest(){
+    public void calculateExpressionInParentClassTest() {
 
         BeanTestChildWithoutExpression beanTestChild = new BeanTestChildWithoutExpression();
         beanTestChild.setField1(5);
@@ -45,9 +45,11 @@ public class MxCalculatorWithInheritanceTest {
         assertEquals(10, beanTestChild.getField4(), 0.001);
     }
 
-    @Test(expected = NotValidExpressionException.class)
+    @Test
     public void throwExpressionIsNotValidExceptionForFieldTest() {
-        MXFactory.createCalculator(ChildInvalidExpressionTestBean.class);
+        assertThrows(NotValidExpressionException.class, () -> {
+            MXFactory.createCalculator(ChildInvalidExpressionTestBean.class);
+        });
     }
 
     @Test
@@ -56,8 +58,8 @@ public class MxCalculatorWithInheritanceTest {
 
         ChildAnnotationMixAndDependencyTestBean beanMix = new ChildAnnotationMixAndDependencyTestBean();
 
-        beanMix.field1="5";
-        beanMix.field2="3";
+        beanMix.field1 = "5";
+        beanMix.field2 = "3";
         beanMix.field5 = "6";
         beanMix.field6 = "7";
 
@@ -69,17 +71,19 @@ public class MxCalculatorWithInheritanceTest {
         assertEquals("11.0", beanMix.field8);
     }
 
-    @Test(expected = NullFieldValueException.class)
+    @Test
     public void calculateThrowExpressionWhenContainsNullInheritedArgumentFieldTest() {
         ChildTestBean childTestBean = new ChildTestBean();
         childTestBean.setField2(2);
 
         Calculator<ChildTestBean> calculator = MXFactory.createCalculator(ChildTestBean.class);
 
-        calculator.calculate(childTestBean);
+        assertThrows(NullFieldValueException.class, () -> {
+            calculator.calculate(childTestBean);
+        });
     }
 
-    @Test(expected = UnparseableFieldException.class)
+    @Test
     public void calculateThrowUparseableFieldExceptionTest() {
         Calculator<ChildUnparseableFieldTestBean> calculator = MXFactory.createCalculator(ChildUnparseableFieldTestBean.class);
 
@@ -89,10 +93,12 @@ public class MxCalculatorWithInheritanceTest {
 
         beanTest.field2 = 6;
 
-        calculator.calculate(beanTest);
+        assertThrows(UnparseableFieldException.class, () -> {
+            calculator.calculate(beanTest);
+        });
     }
 
-    @Test(expected = UnparseableResultException.class)
+    @Test
     public void calculateThrowUnparseableResultExceptionTest() {
         Calculator<ChildUnparseableResultTestBean> calculator = MXFactory.createCalculator(ChildUnparseableResultTestBean.class);
 
@@ -103,6 +109,8 @@ public class MxCalculatorWithInheritanceTest {
 
         unparseableResult.field2 = "6";
 
-        calculator.calculate(unparseableResult);
+        assertThrows(UnparseableResultException.class, () -> {
+            calculator.calculate(unparseableResult);
+        });
     }
 }

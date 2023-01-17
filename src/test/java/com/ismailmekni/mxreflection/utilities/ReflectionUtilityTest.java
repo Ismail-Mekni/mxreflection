@@ -1,12 +1,12 @@
 package com.ismailmekni.mxreflection.utilities;
 
 import com.ismailmekni.mxreflection.beans.TestBean;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ReflectionUtilityTest {
 

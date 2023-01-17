@@ -4,9 +4,9 @@ import com.ismailmekni.mxreflection.annotations.Arg;
 import com.ismailmekni.mxreflection.annotations.Expression;
 import com.ismailmekni.mxreflection.core.Calculator;
 import com.ismailmekni.mxreflection.factory.MXFactory;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Example2Test {
 

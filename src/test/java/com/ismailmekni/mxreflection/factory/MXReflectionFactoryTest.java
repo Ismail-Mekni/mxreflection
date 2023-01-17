@@ -7,9 +7,10 @@ import com.ismailmekni.mxreflection.exceptions.CycleExpressionDependencyExceptio
 import com.ismailmekni.mxreflection.exceptions.DuplicatedArgumentNameOrInnerClassDetectedException;
 import com.ismailmekni.mxreflection.exceptions.NotValidExpressionException;
 import com.ismailmekni.mxreflection.exceptions.NoExpressionFoundForTypeException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MXReflectionFactoryTest {
 
@@ -20,29 +21,38 @@ public class MXReflectionFactoryTest {
         assertNotNull(calculator);
     }
 
-    @Test(expected = NoExpressionFoundForTypeException.class)
+    @Test
     public void throwNoExpressionFoundExceptionWhenCreatingExpressionFactoryTest() {
-        MXFactory.createCalculator(WithoutExpressionTestBean.class);
-
+        assertThrows(NoExpressionFoundForTypeException.class, () -> {
+            MXFactory.createCalculator(WithoutExpressionTestBean.class);
+        });
     }
 
-    @Test(expected = NotValidExpressionException.class)
+    @Test
     public void throwExpressionIsNotValidExceptionForFieldTest() {
-        MXFactory.createCalculator(InvalidExpressionTestBean.class);
+        assertThrows(NotValidExpressionException.class, () -> {
+            MXFactory.createCalculator(InvalidExpressionTestBean.class);
+        });
     }
 
-    @Test(expected = CycleExpressionDependencyException.class)
+    @Test
     public void throwCycleExpressionDependencyException() {
-        MXFactory.createCalculator(CyclicDependencyTestBean.class);
+        assertThrows(CycleExpressionDependencyException.class, () -> {
+            MXFactory.createCalculator(CyclicDependencyTestBean.class);
+        });
     }
 
-    @Test(expected = DuplicatedArgumentNameOrInnerClassDetectedException.class)
-    public void throwDuplicatedArgumentNameTest(){
-        MXFactory.createCalculator(DuplicateNameTestBean.class);
+    @Test
+    public void throwDuplicatedArgumentNameTest() {
+        assertThrows(DuplicatedArgumentNameOrInnerClassDetectedException.class, () -> {
+            MXFactory.createCalculator(DuplicateNameTestBean.class);
+        });
     }
 
-    @Test(expected = CycleExpressionDependencyException.class)
+    @Test
     public void throwCycleExpressionDependencyWithInheritanceException() {
-        MXFactory.createCalculator(ChildCyclicDependencyTestBean.class);
+        assertThrows(CycleExpressionDependencyException.class, () -> {
+            MXFactory.createCalculator(ChildCyclicDependencyTestBean.class);
+        });
     }
 }
